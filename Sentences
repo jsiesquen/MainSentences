@@ -3,5 +3,5 @@
 - See Preferences > Package Control. After Install [E] => HTML5, EMMET, AutoFilename, SFTP, Bootstrap 3 Snippets, Bootstrap 4 Snippets, jQuery, BracketHighlighter.
 
 # Composer
+- composer create-project slim/slim-skeleton [my-app-name]
 - composer install (load/update repositories and dependencies)
-- 
