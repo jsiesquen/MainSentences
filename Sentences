@@ -5,3 +5,12 @@
 # Composer
 - composer create-project slim/slim-skeleton [my-app-name]
 - composer install (load/update repositories and dependencies)
+
+
+# Git
+- Change login authentication (.git/config)
+git config -e
+git remote show origin
+
+- Recovery new changes
+git pull
