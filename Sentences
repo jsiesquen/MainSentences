@@ -19,3 +19,10 @@ git pull
 # https://app.vagrantup.com/boxes/search?utf8=✓&sort=downloads&provider=virtualbox
 # Initialization
 - vagrant up --provider=virtualbox
+
+
+# Linux
+# Find Distribution Version
+- uname -a
+- lsb_release -a
+- cat /etc/*release
