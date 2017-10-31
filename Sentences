@@ -9,25 +9,30 @@
 
 # Git
 # Change login authentication (.git/config)
-git config -e
+- git config -e
 
 # Clone repo remote
 - git clone http://user@server.com/package.git new_folder
 
-# 
-- git remote -v
-- git checkout develop
+# Download objects and refs from another repository
+- git fetch
 
-#  
-git remote show origin
+# State Latest of repository
+- git remote -v
+
+# Switched to a another branch
+- git checkout develop
 
 # Show the working tree status
 - git status
+- git diff                    //check diff between files prepared for commit
+- git diff --cached           //check diff between files no prepared
+- git diff --staged           //check diff between files no prepared
 
 # Commit and Push
-- git add .                   // Add file contents to the index
-- git commit -m "message"     // Record changes to the repository
-- git push origin develop     // Update remote refs along with associated objects
+- git add .                      // Add file contents to the index
+- git commit -a -m "message"     // Record changes to the repository; -a for ommit "git add" command
+- git push origin develop        // Update remote refs along with associated objects
 
 # Recovery new changes (Fetch from and integrate with another repository or a local branch) 
 git pull
