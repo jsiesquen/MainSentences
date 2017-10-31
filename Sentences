@@ -8,12 +8,34 @@
 
 
 # Git
-- Change login authentication (.git/config)
+# Change login authentication (.git/config)
 git config -e
+
+# Clone repo remote
+- git clone http://user@server.com/package.git new_folder
+
+# 
+- git remote -v
+- git checkout develop
+
+#  
 git remote show origin
 
-- Recovery new changes
+# Show the working tree status
+- git status
+
+# Commit and Push
+- git add .                   // Add file contents to the index
+- git commit -m "message"     // Record changes to the repository
+- git push origin develop     // Update remote refs along with associated objects
+
+# Recovery new changes (Fetch from and integrate with another repository or a local branch) 
 git pull
+
+# Show commit logs
+git log
+
+
 
 # Vagrant
 # https://app.vagrantup.com/boxes/search?utf8=✓&sort=downloads&provider=virtualbox
