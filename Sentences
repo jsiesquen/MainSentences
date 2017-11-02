@@ -29,6 +29,12 @@
 - git diff --cached           //check diff between files no prepared
 - git diff --staged           //check diff between files no prepared
 
+# Revert (reset) changes to a file if they haven’t been committed yet:
+- git checkout -- <file>
+
+# Revert (reset) a single file to a specific revision (with Previous Commit)
+- git checkout <commit_hash> -- <file>
+
 # Commit and Push
 - git add .                      // Add file contents to the index
 - git commit -a -m "message"     // Record changes to the repository; -a for ommit "git add" command
