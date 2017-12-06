@@ -39,6 +39,7 @@
 - git add .                      // Add file contents to the index
 - git commit -a -m "message"     // Record changes to the repository; -a for ommit "git add" command
 - git push origin develop        // Update remote refs along with associated objects
+- git reset HEAD~                //Undo a commit and redo
 
 # Recovery new changes (Fetch from and integrate with another repository or a local branch) 
 git pull
