@@ -60,3 +60,77 @@ git log
 - uname -a
 - lsb_release -a
 - cat /etc/*release
+
+# Magento 2 Cli
+# Know virtual path admin panel.
+- vagrant@magento2:/vagrant/source$ ./bin/magento info:adminuri
+Admin URI: /backend
+
+- vagrant@magento2:/vagrant/source$ php bin/magento cache:status
+Current status:
+                        config: 1
+                        layout: 1
+                    block_html: 1
+                   collections: 1
+                    reflection: 1
+                        db_ddl: 1
+                           eav: 1
+         customer_notification: 0
+                     full_page: 0
+            config_integration: 1
+        config_integration_api: 1
+                     translate: 1
+             config_webservice: 1
+
+- vagrant@magento2:/vagrant/source$ php bin/magento cache:clean
+Cleaned cache types:
+config
+layout
+block_html
+collections
+reflection
+db_ddl
+eav
+customer_notification
+full_page
+config_integration
+config_integration_api
+translate
+config_webservice
+
+- vagrant@magento2:/vagrant/source$ php bin/magento cache:flush
+Flushed cache types:
+config
+layout
+block_html
+collections
+reflection
+db_ddl
+eav
+customer_notification
+full_page
+config_integration
+config_integration_api
+translate
+config_webservice
+
+- vagrant@magento2:/vagrant/source$ php bin/magento setup:static-content:deploy
+Requested languages: en_US
+Requested areas: frontend, adminhtml
+Requested themes: Magento/blank, Magento/luma, Magento/backend
+=== frontend -> Magento/blank -> en_US ===
+=== frontend -> Magento/luma -> en_US ===
+=== adminhtml -> Magento/backend -> en_US ===
+
+Successful: 2013 files; errors: 0
+---
+Successful: 2138 files; errors: 0
+---
+Successful: 2063 files; errors: 0
+---
+=== Minify templates ===
+Successful: 869 files modified
+---
+New version of deployed files: 1513037090
+
+- 
