@@ -133,4 +133,18 @@ Successful: 869 files modified
 ---
 New version of deployed files: 1513037090
 
-- 
+- vagrant@magento2:/vagrant/source$ php bin/magento indexer:status
+Design Config Grid:                                Ready
+Customer Grid:                                     Ready
+Category Products:                                 Ready
+Product Categories:                                Ready
+Product Price:                                     Ready
+Product EAV:                                       Ready
+Catalog Search:                                    Ready
+Stock:                                             Ready
+Catalog Rule Product:                              Reindex required
+Catalog Product Rule:                              Ready
+
+- vagrant@magento2:/vagrant/source$ php bin/magento indexer:reindex catalogrule_rule
+Catalog Rule Product index has been rebuilt successfully in 00:00:11
+
