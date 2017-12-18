@@ -62,6 +62,8 @@ git log
 - cat /etc/*release
 - sudo bash -c 'echo > /var/log/apache2/error.log'
 
+
+
 # Magento 2 Cli
 # Know virtual path admin panel.
 - vagrant@magento2:/vagrant/source$ ./bin/magento info:adminuri
@@ -148,4 +150,11 @@ Catalog Product Rule:                              Ready
 
 - vagrant@magento2:/vagrant/source$ php bin/magento indexer:reindex catalogrule_rule
 Catalog Rule Product index has been rebuilt successfully in 00:00:11
+
+# Module Status recently installed
+- bin/magento module:status                                            # Status
+- bin/magento module:enable J2t_Payplug --clear-static-content         # Enable
+- bin/magento setup:upgrade                                            # Register
+- bin/magento setup:di:compile                                         # Recompile
+- bin/magento module:status
 
