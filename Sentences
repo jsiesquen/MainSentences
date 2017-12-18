@@ -60,6 +60,7 @@ git log
 - uname -a
 - lsb_release -a
 - cat /etc/*release
+- sudo bash -c 'echo > /var/log/apache2/error.log'
 
 # Magento 2 Cli
 # Know virtual path admin panel.
