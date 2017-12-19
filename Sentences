@@ -63,6 +63,12 @@ git log
 - sudo bash -c 'echo > /var/log/apache2/error.log'
 
 
+# Magento QA Code
+- https://github.com/magento/marketplace-tools
+- https://github.com/magento/marketplace-eqp
+
+# Magento IDE integration
+- https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm
 
 # Magento 2 Cli
 # Know virtual path admin panel.
