@@ -148,6 +148,7 @@ Stock:                                             Ready
 Catalog Rule Product:                              Reindex required
 Catalog Product Rule:                              Ready
 
+- php bin/magento deploy:mode:set developer
 - vagrant@magento2:/vagrant/source$ php bin/magento indexer:reindex catalogrule_rule
 Catalog Rule Product index has been rebuilt successfully in 00:00:11
 
