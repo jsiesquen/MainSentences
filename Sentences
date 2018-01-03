@@ -4,8 +4,8 @@
 
 # Composer
 - composer create-project slim/slim-skeleton [my-app-name]
-- composer install (load/update repositories and dependencies)
-
+- composer install (Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.)
+- composer show -i (Show information about packages)
 
 # Git
 # Change login authentication (.git/config)
@@ -154,7 +154,8 @@ Stock:                                             Ready
 Catalog Rule Product:                              Reindex required
 Catalog Product Rule:                              Ready
 
-- php bin/magento deploy:mode:set developer
+- php bin/magento deploy:mode:show
+- php bin/magento deploy:mode:set developer|production
 - vagrant@magento2:/vagrant/source$ php bin/magento indexer:reindex catalogrule_rule
 Catalog Rule Product index has been rebuilt successfully in 00:00:11
 
@@ -165,3 +166,5 @@ Catalog Rule Product index has been rebuilt successfully in 00:00:11
 - bin/magento setup:di:compile                                         # Recompile
 - bin/magento module:status
 
+# rm -rf var/di var/cache var/generation/ var/page_cache/
+# sudo bash -c 'echo > /var/log/apache2/error-site.log'
