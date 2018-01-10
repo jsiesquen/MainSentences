@@ -4,8 +4,21 @@
 
 
 # Linux
+- Find distribution version
+    - uname -a
+    - lsb_release -a
+    - cat /etc/*release
+    - sudo bash -c 'echo > /var/log/apache2/error.log'
 - Useful commands
     - sudo bash -c 'echo > /var/log/apache2/error-site.log'    # Cleaning log files
+    - tar -cvzf docs.tar.gz /home/neksix/Documents/            # Compress the tar file with gzip pass the -z option
+    - tar -cvzf docs.tar.bz2 /home/vivek/Documents/            # Compress the tar file with bzip2 pass the -j option
+    - tar -tvf docs.tar                                        # List the contents of a files
+    - tar -tvzf docs.tar.gz
+    - tar -tvjf docs.tar.bz2
+    - tar -xvf docs.tar                                        # Extract the contents of a tar file
+    - tar -xvzf docs.tar.gz
+    - tar -xvjf docs.tar.bz2                                   # t: List contents; x: Extract; z: Compress gzip; j: Compress bzip2
     
 - Using SysV Init scripts directly:
     - /etc/init.d/php-fpm restart    # typical
@@ -70,15 +83,6 @@
 - https://app.vagrantup.com/boxes/search?utf8=✓&sort=downloads&provider=virtualbox
 - Initialization
     - vagrant up --provider=virtualbox --provision
-
-
-# Linux
-- Find distribution version
-    - uname -a
-    - lsb_release -a
-    - cat /etc/*release
-    - sudo bash -c 'echo > /var/log/apache2/error.log'
-
 
 # Magento QA Code
     - https://github.com/magento/marketplace-tools
