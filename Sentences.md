@@ -41,6 +41,11 @@
     - systemctl restart php5-fpm.service   # uncommon
     - systemctl restart php7.0-fpm.service # uncommon PHP 7
 
+# Nginx
+- /etc/php/7.0/fpm/pool.d/www.conf   # Time Out limits
+- sudo systemctl status nginx |service nginx status
+- sudo systemctl reload nginx | service nginx reloadg
+
 # Composer
 - composer create-project slim/slim-skeleton [my-app-name]
 - composer install (Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.)
