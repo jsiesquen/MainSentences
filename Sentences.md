@@ -41,6 +41,9 @@
     - systemctl restart php5-fpm.service   # uncommon
     - systemctl restart php7.0-fpm.service # uncommon PHP 7
 
+- sudo apt-get update
+- sudo apt-get upgrade -y | sudo apt-get dist-upgrade -y
+
 # Nginx
 - /etc/php/7.0/fpm/pool.d/www.conf   # Time Out limits
 - sudo systemctl status nginx |service nginx status
