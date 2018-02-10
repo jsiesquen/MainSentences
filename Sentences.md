@@ -26,7 +26,7 @@
     - /etc/init.d/php7.0-fpm restart # debian-style PHP 7
 
 - Using service wrapper script
-    - service --status-all
+    - service --status-all-
     - service php-fpm restart    # typical
     - service php5-fpm restart   # debian-style
     - service php7.0-fpm restart # debian-style PHP 7
@@ -86,6 +86,11 @@
 - Show commit logs
     - git log
 
+# MySQL
+- vim /etc/mysql/debian.cnf
+- mysql -u debian-sys-maint -p[xxxxxxxx]
+- SET PASSWORD FOR 'user-name-here'@'hostname' = PASSWORD('new-password');      // <5.7.5
+- ALTER USER 'user'@'hostname' IDENTIFIED BY 'newPass';   // >5.7.6
 
 # Vagrant
 - https://app.vagrantup.com/boxes/search?utf8=✓&sort=downloads&provider=virtualbox
