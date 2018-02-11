@@ -1,3 +1,24 @@
+# Local Environment (Windows)
+- WebApps
+    - Typescript 2.7.1
+    - Angular CLI: 1.6.8
+    - Node 8.9.4 LTS, NPM 5.6.0
+    
+- Mobile
+    - Android Studio 3
+
+- DevOps
+    - Vagrant 2.0.1
+    - VirtualBox 5.2.6
+    - Docker CE 17.12
+
+# FrontEnd Commands
+- npm install -g @angular/cli        # install
+- npm uninstall -g @angular/cli      # upgrade (1)
+- npm cache clean                    # upgrade (2) 
+- npm install -g @angular/cli@latest # upgrade (3) if npm version is > 5 then use `npm cache verify` to avoid errors (or to avoid using --force)
+
+
 # Sublime Text 3
 - Install Package Controls: https://packagecontrol.io/installation
 - See Preferences > Package Control. After Install [E] => HTML5, EMMET, AutoFilename, SFTP, Bootstrap 3 Snippets, Bootstrap 4 Snippets, jQuery, BracketHighlighter.
