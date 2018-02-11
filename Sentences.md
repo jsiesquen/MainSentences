@@ -1,4 +1,7 @@
 # Local Environment (Windows)
+- noSQL Database
+    - MongoDB 3.6
+    
 - WebApps
     - Typescript 2.7.1
     - Angular CLI: 1.6.8
@@ -18,6 +21,15 @@
 - npm cache clean                    # upgrade (2) 
 - npm install -g @angular/cli@latest # upgrade (3) if npm version is > 5 then use `npm cache verify` to avoid errors (or to avoid using --force)
 
+# TypeScript
+- tsc -init
+- tsc -w
+
+# MongoDB (27017 default port)
+- Database > Collections (Tables) > Documents (Rows) key-value pair.
+- Document: key (string), value (string, number, array or list, date, boolean, object).
+- use [dbname] / db / show dbs / db.dropDatabase() 
+- db.[collection].insert({"key":"value"}) / db.createCollection("[collection]") / show collections / db.[collection].drop()
 
 # Sublime Text 3
 - Install Package Controls: https://packagecontrol.io/installation
