@@ -89,6 +89,9 @@
 
 
 # Git
+- Config
+    - git config --global user.email "email@gmail.com"
+    - git config --global user.name "John Doe"
 - Change login authentication (.git/config)
     - git config -e
 - Clone repo remote
