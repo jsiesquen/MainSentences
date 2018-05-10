@@ -14,6 +14,36 @@
     - Vagrant 2.0.1
     - VirtualBox 5.2.6
     - Docker CE 17.12
+    
+- Laravel:
+   $ cd D:\JSiesquen\Box\Homestead
+   $ vagrant box add laravel/homestead
+   
+   $ git clone https://github.com/laravel/homestead.git .
+   $ git checkout v7.4.2
+   $ bash init.sh (init.bat)
+   
+   $ ssh-keygen -t rsa -C "my.email@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Neksix/.ssh/id_rsa):
+Created directory '/c/Users/Neksix/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Neksix/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Neksix/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:d/e96vcpv0YyrgOe72r1CHxA "my.email@gmail.com"
+The key's randomart image is:
++---[RSA 2048]----+
+|          ..     |
+|          o. E   |
+|         o..  .  |
+|        . .. .   |
+|     o..++==+=B*=|
++----[SHA256]-----+
+    
+   $ Edit Homestead.yaml file
+   $ Edit host file (Windows) or hostname (Linux)
 
 # FrontEnd Commands
 - npm install -g @angular/cli        # install
