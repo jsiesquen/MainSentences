@@ -44,6 +44,7 @@ The key's randomart image is:
     
    $ Edit Homestead.yaml file
    $ Edit host file (Windows) or hostname (Linux)
+   $ vagrant up
 
 # FrontEnd Commands
 - npm install -g @angular/cli        # install
