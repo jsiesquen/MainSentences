@@ -1,7 +1,7 @@
 # Local Environment (Windows)
 - noSQL Database
     - MongoDB 3.6
-    
+
 - WebApps
     - Typescript 2.7.1
     - Angular CLI: 1.6.8
@@ -14,7 +14,13 @@
     - Vagrant 2.0.1
     - VirtualBox 5.2.6
     - Docker CE 17.12
-    
+
+- Web-Tools:
+- BrowerSync
+    $ npm install -g browser-sync
+    $ browser-sync --version
+      2.24.4
+      
 - Laravel:
    $ cd D:\JSiesquen\Box\Homestead
    $ vagrant box add laravel/homestead
@@ -45,6 +51,8 @@ The key's randomart image is:
    $ Edit Homestead.yaml file
    $ Edit host file (Windows) or hostname (Linux)
    $ vagrant up
+
+
 
 # FrontEnd Commands
 - npm install -g @angular/cli        # install
