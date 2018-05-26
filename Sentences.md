@@ -20,7 +20,9 @@
     $ npm install -g browser-sync
     $ browser-sync --version
       2.24.4
-      
+    $ npm init (for new projects)
+    # npm install --save-dev browser-sync
+    
 - Laravel:
    $ cd D:\JSiesquen\Box\Homestead
    $ vagrant box add laravel/homestead
