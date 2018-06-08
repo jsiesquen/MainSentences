@@ -278,3 +278,7 @@ The key's randomart image is:
 - php bin/magento setup:di:compile                                         # Recompile
 - php bin/magento module:status
 - rm -rf var/di var/cache var/generation/ var/page_cache/                  # remove temps
+
+
+# AWS
+- https://www.linkedin.com/pulse/listado-de-todos-los-servicios-amazon-web-services-daniel-pe%C3%B1a-silva/?published=t
