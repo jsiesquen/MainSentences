@@ -54,7 +54,8 @@ The key's randomart image is:
    $ Edit host file (Windows) or hostname (Linux)
    $ vagrant up
 
-
+# NPM
+- Update: sudo npm install -g npm
 
 # FrontEnd Commands
 - npm install -g @angular/cli        # install
@@ -62,6 +63,15 @@ The key's randomart image is:
 - npm cache clean                    # upgrade (2) 
 - npm install -g @angular/cli@latest # upgrade (3) if npm version is > 5 then use `npm cache verify` to avoid errors (or to avoid using --force)
 
+# SASS https://sass-lang.com:
+- Linux Install: sudo npm install -g sass (Nice!)
+- Win Install (like Administrator):
+  - PowerShell Execute: Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+  - Check: choco /?
+  - PowerShell Execute: choco install dart-sdk (instal stable release 1.24.3)
+  - PowerShell Execute: choco upgrade dart-sdk --pre (install 2.0.0.68-dev-0)
+  - PowerShell Execute: choco install sass (install 1.9.2)
+  
 # TypeScript
 - tsc -init
 - tsc -w
