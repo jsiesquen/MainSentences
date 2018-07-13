@@ -78,7 +78,7 @@ The key's randomart image is:
   - Usage:
       - sass .\sass\styles.sass:css/style.css
       - scss .\scss\styles2.sass:css/style2.css
-      - sass --wacth .\sass\styles.sass:css/style.css
+      - sass --watch .\sass\styles.sass:css/style.css
   
 # TypeScript
 - tsc -init
