@@ -56,6 +56,7 @@ The key's randomart image is:
 
 # NPM
 - Update: sudo npm install -g npm
+- On Windows NodeJS install (node -v => v8.11.3; npm -v => 5.6.0).
 
 # FrontEnd Commands
 - npm install -g @angular/cli        # install
@@ -64,8 +65,10 @@ The key's randomart image is:
 - npm install -g @angular/cli@latest # upgrade (3) if npm version is > 5 then use `npm cache verify` to avoid errors (or to avoid using --force)
 
 # SASS https://sass-lang.com:
-- Linux Install: sudo npm install -g sass (Nice!)
-- Win Install (like Administrator):
+- Linux Install: sudo npm install -g sass (Nice! => )
+- Windows Install: sudo npm install -g sass (Nice! => 1.9.2 compiled with dart2js 2.0.0-dev.66.0)
+
+- Using choco fail (like Administrator) aren't use:
   - PowerShell Execute: Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
   - Check: choco /?
   - PowerShell Execute: choco install dart-sdk (instal stable release 1.24.3)
