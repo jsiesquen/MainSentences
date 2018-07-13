@@ -75,6 +75,11 @@ The key's randomart image is:
   - PowerShell Execute: choco upgrade dart-sdk --pre (install 2.0.0.68-dev-0)
   - PowerShell Execute: choco install sass (install 1.9.2)
   
+  - Usage:
+      - sass .\sass\styles.sass:css/style.css
+      - scss .\scss\styles2.sass:css/style2.css
+      - sass --wacth .\sass\styles.sass:css/style.css
+  
 # TypeScript
 - tsc -init
 - tsc -w
@@ -170,11 +175,16 @@ The key's randomart image is:
     - git add .                      // Add file contents to the index
     - git commit -a -m "message"     // Record changes to the repository; -a for ommit "git add" command
     - git push origin develop        // Update remote refs along with associated objects
-    - git reset HEAD~                //Undo a commit and redo
+    - git reset HEAD~                // Undo a commit and redo
 - Recovery new changes (Fetch from and integrate with another repository or a local branch) 
     - git pull
 - Show commit logs
     - git log
+- Show all commits
+    - git log --all --oneline
+- Target to hash
+    - git checkou <hash>   // Previuos State
+    - git checkou master   // Current State
 
 # MySQL
 - vim /etc/mysql/debian.cnf
