@@ -305,3 +305,111 @@ The key's randomart image is:
 
 # AWS
 - https://www.linkedin.com/pulse/listado-de-todos-los-servicios-amazon-web-services-daniel-pe%C3%B1a-silva/?published=t
+
+
+# CMS
+# Concrete5
+- (https://github.com/concrete5/composer)
+- mkdir concrete5.test
+- composer create-project -n concrete5/composer concrete5.test
+- cd concrete5.test/
+- sudo ./vendor/bin/concrete5 c5:install -i
+
+The current user is root: this is discouraged for this CLI command.
+Do you want to proceed anyway [Y/N]? Y
+Checking required preconditions:
+- PHP 5.5.9... passed (you are running PHP version 7.2.4-1+ubuntu18.04.1+deb.sury.org+1).
+- MySQL PDO Extension Enabled... passed.
+- JSON Extension Enabled... passed.
+- DOM Extension Enabled... passed.
+- ASP Style Tags Disabled... passed.
+- Fileinfo Extension Enabled... passed.
+- Image Manipulation Available... passed.
+- XML Support... passed.
+- Writable Files and Configuration Directories... passed.
+- Internationalization Support... passed.
+- PHP Comments Preserved... passed.
+- Tokenizer Extension Enabled... passed.
+- Memory limit 64.00 MB.... passed (current memory limit: 512.00 MB).
+Checking optional preconditions:
+- Remote File Importing... passed.
+- Zip Support... passed.
+
+Location of database server? [127.0.0.1]:
+Database name?: themeconcrete5
+Database username?: root
+Database password?:
+The system time zone, compatible with the database one? [UTC]:
+Name of the site? [concrete5 Site]: Neksix Site
+Canonical URL?: http://themeconcrete5.test/
+Alternative canonical URL?: http://themeconcrete5.test/
+Starting point to use? [elemental_blank]:
+  [0] elemental_blank
+  [1] elemental_full
+ > 1
+Email of the admin user of the install? [admin@example.com]: jsiesquen@adperu.com
+Password of the admin user of the install?:
+Additional user username?: jsiesquen
+Additional user email? [demo@example.com]: jsiesquen@neksix.com
+Additional user password?:
+The default concrete5 interface language (eg en_US)? [en_US]: es_ES
+The default site locale (eg en_US)? [es_ES]:
+Use configuration file for installation? [none]:
+
+Checking required configuration preconditions:
+- Canonical URLs... passed.
+- Database is empty... passed.
+- MySQL InnoDB engine... passed.
+- Starting Point... passed.
+Checking optional configuration preconditions:
+- Database time zone... passed.
+- Table case... passed (Table names are stored in the specified lettercase (lookups are performed in a case-sensitive way).).
+
++---------------------------+-----------------------------+
+| Question                  | Value                       |
++---------------------------+-----------------------------+
+| env                       |                             |
+| db-server                 | 127.0.0.1                   |
+| db-username               | root                        |
+| db-password               | HIDDEN                      |
+| db-database               | themeconcrete5              |
+| timezone                  | UTC                         |
+| site                      | Neksix Site                 |
+| canonical-url             | http://themeconcrete5.test/ |
+| canonical-url-alternative | http://themeconcrete5.test/ |
+| starting-point            | elemental_full              |
+| admin-email               | jsiesquen@adperu.com        |
+| admin-password            | HIDDEN                      |
+| demo-username             | jsiesquen                   |
+| demo-password             | HIDDEN                      |
+| demo-email                | jsiesquen@neksix.com        |
+| language                  | es_ES                       |
+| site-locale               | es_ES                       |
+| config                    | none                        |
++---------------------------+-----------------------------+
+Would you like to install with these settings? [Y]es / [N]o / [E]dit: Y
+
+5%: Starting installation and creating directories.
+10%: Creating database tables.
+12%: Creating site.
+15%: Adding admin user.
+20%: Installing permissions & workflow.
+23%: Installing Custom Data Objects.
+26%: Creating home page.
+30%: Installing attributes.
+35%: Adding block types.
+39%: Adding gathering data sources.
+40%: Page type basic setup.
+45%: Adding themes.
+47%: Installing automated jobs.
+50%: Installing dashboard.
+55%: Installing login and registration pages.
+57%: Adding image editor functionality.
+60%: Configuring site.
+65%: Importing files.
+70%: Adding pages and content.
+85%: Adding desktops.
+90%: Setting site permissions.
+95%: Finishing.
+Adding demo user... done.
+Installation Complete!
