@@ -22,7 +22,15 @@
       2.24.4
     $ npm init (for new projects)
     # npm install --save-dev browser-sync
-    
+
+- ReactJS
+- npx create-react-app crud-app
+- cd crud-app
+- yarn start // Starts the development server (recommended)
+- yarn build // Bundles the app into static files for production.
+- yarn test  // Starts the test runner.
+- yarn eject // Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
+
 - Laravel:
    $ cd D:\JSiesquen\Box\Homestead
    $ vagrant box add laravel/homestead
