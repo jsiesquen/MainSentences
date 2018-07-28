@@ -1,4 +1,4 @@
-# New projects
+# New projects with NodeJS and Webpack
 - Creating new app based on NodeJS
 - Create folder structure:
     - [root_project]
@@ -6,17 +6,22 @@
         - src/index.html
         - src/app/index.js
         
-- Install modules
+- Install modules (webpack now 4.16.3)
     - npm init --yes    // Create a new file "package.json" into root project folder
     - npm i webpack webpack-dev-server html-webpack-plugin webpack-cli -D // Install Pack moduler, Development Local Server, Cli Webpack and Html to Production. All like DEV dependences.
 - Define input/ouput routing paths
     - On "webpack.config.js"
-        module.exports = {
+       const htmlWebpack = require('html-webpack-plugin');
+       const path = require('path');
+       module.exports = {
             entry: './src/app/index.js',
             output: {
-                path: __dirname + '/dist',
+                path: path.join(__dirname, '/dist'),
                 filename: 'bundle.js'
             }
+        },
+        devServer: {
+            port: 8050
         },
         plugins: [
             new htmlWebpack({
@@ -26,11 +31,13 @@
         
     - On "package.json"
         "scripts": {
-            "build": "webpack --mode production"
+            "build": "webpack --mode production",
+            "dev": "webpack-dev-server --mode development"
         },
     
 - Testing output files
     - npm run build     // Create new files: dist/bundle.js and index.html within dist folder.
+    - npm run dev       // Run local server for test our changes.
 
 
 # Local Environment (Windows)
