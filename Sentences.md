@@ -1,3 +1,38 @@
+# New projects
+- Creating new app based on NodeJS
+- Create folder structure:
+    - [root_project]
+        - webpack.config.js
+        - src/index.html
+        - src/app/index.js
+        
+- Install modules
+    - npm init --yes    // Create a new file "package.json" into root project folder
+    - npm i webpack webpack-dev-server html-webpack-plugin webpack-cli -D // Install Pack moduler, Development Local Server, Cli Webpack and Html to Production. All like DEV dependences.
+- Define input/ouput routing paths
+    - On "webpack.config.js"
+        module.exports = {
+            entry: './src/app/index.js',
+            output: {
+                path: __dirname + '/dist',
+                filename: 'bundle.js'
+            }
+        },
+        plugins: [
+            new htmlWebpack({
+                template: './src/index.html'
+            })
+        ]
+        
+    - On "package.json"
+        "scripts": {
+            "build": "webpack --mode production"
+        },
+    
+- Testing output files
+    - npm run build     // Create new files: dist/bundle.js and index.html within dist folder.
+
+
 # Local Environment (Windows)
 - noSQL Database
     - MongoDB 3.6
