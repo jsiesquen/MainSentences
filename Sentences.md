@@ -237,7 +237,14 @@ The key's randomart image is:
 - Target to hash
     - git checkou <hash>   // Previuos State
     - git checkou master   // Current State
-
+- Initializate a existent repository on existing local code
+    - echo "# GithubClient" >> README.md
+    - git init
+    - git add README.md
+    - git commit -m "first commit"
+    - git remote add origin https://github.com/jsiesquen/GithubClient.git
+    - git push -u origin master
+    
 # MySQL
 - vim /etc/mysql/debian.cnf
 - mysql -u debian-sys-maint -p[xxxxxxxx]
