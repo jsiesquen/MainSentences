@@ -227,6 +227,7 @@ The key's randomart image is:
     - git commit -a -m "message"     // Record changes to the repository; -a for ommit "git add" command
     - git push origin develop        // Update remote refs along with associated objects
     - git reset HEAD~                // Undo a commit and redo
+    - git reset <file>               // Remove "Add" action previously
 - Recovery new changes (Fetch from and integrate with another repository or a local branch) 
     - git pull
 - Show commit logs
