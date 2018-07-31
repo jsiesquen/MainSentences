@@ -197,6 +197,12 @@ The key's randomart image is:
 - composer install (Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.)
 - composer show -i (Show information about packages)
 
+# Docker (https://docs.docker.com/get-started/)
+- Linux: https://get.docker.com/
+    - sudo curl -fsSL get.docker.com -o get-docker.sh
+    - 
+- Windows (Docker CE): https://store.docker.com/editions/community/docker-ce-desktop-windows
+    - 
 
 # Git
 - Config
