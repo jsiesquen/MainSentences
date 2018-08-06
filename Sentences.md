@@ -262,6 +262,28 @@ The key's randomart image is:
 - Initialization
     - vagrant up --provider=virtualbox --provision
 
+# Drupal 8 
+- which drush
+/home/vagrant/.composer/vendor/bin/drush
+- brew install drush    // if aren't install
+- drush dl drupal-8 --select
+Choose one of the available releases for drupal:
+ [0]  :  Cancel
+ [1]  :  8.7.x-dev    -  2018-Aug-06  -  Development
+ [2]  :  8.6.0-beta2  -  2018-Aug-03  -  Supported
+ [3]  :  8.5.6        -  2018-Aug-01  -  Security, Recommended
+3
+Project drupal (8.5.6) downloaded to /home/vagrant/code/drupal8.test/public/drupal-8.5.6.                                                                                                                                          [success]
+Project drupal contains:                                                                                                                                                                                                           [success]
+ - 2 profiles: standard, demo_umami
+ - 16 themes: classy, stark, seven, bartik, twig, stable, demo_umami_content, umami, testing_multilingual, testing_missing_dependencies, testing_multilingual_with_english, drupal_system_listing_compatible_test, testing,
+testing_config_overrides, testing_config_import, minimal
+ - 75 modules: field, file, block, system, tracker, contextual, serialization, language, inline_form_errors, hal, layout_builder, big_pipe, responsive_image, content_translation, ban, content_moderation, help, dblog, views_ui,
+block_place, telephone, migrate_drupal, breakpoint, datetime_range, views, statistics, path, history, node, migrate, menu_link_content, datetime, menu_ui, rdf, color, book, filter, contact, ckeditor, editor, image,
+field_layout, workflows, comment, locale, taxonomy, search, settings_tray, entity_reference, user, shortcut, rest, basic_auth, field_ui, syslog, options, aggregator, simpletest, text, quickedit, page_cache, dynamic_page_cache,
+toolbar, automated_cron, config_translation, media, forum, migrate_drupal_ui, update, tour, block_content, config, link, layout_discovery, action
+
+
 # Magento QA Code
     - https://github.com/magento/marketplace-tools
     - https://github.com/magento/marketplace-eqp
