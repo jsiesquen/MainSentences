@@ -40,6 +40,35 @@
     - npm run dev       // Run local server for test our changes.
 
 
+# New Web projects with NodeJS+Webpack+Bootstrap
+- Create folder structure:
+    - [root_project]
+        - src/index.html
+        - src/index.js
+        - src/main.css
+        
+- Install modules (webpack 4.16.5, webpack-cli 3.1.0)
+    - npm init --yes         // Create a new file "package.json" within project folder
+    - npm i webpack --save-dev
+    - npm i webpack-cli --save-dev
+    - Now open up package.json and add a build script:
+        "scripts": {
+          ...
+          "dev": "webpack --mode development",
+          "build": "webpack --mode production"
+        }
+     - npm run build        // Create a minified bundle file within dist/main.js
+     - npm run dev          // Create a bundle file within dist/main.js
+     - npm i babel-core babel-loader babel-preset-env --save-dev        // Transpiling JS ES6 with Babel
+     - npm i html-webpack-plugin html-loader --save-dev     // Additional components for processing HTML
+     - npm i mini-css-extract-plugin css-loader --save-dev  // Extract CSS
+     - npm i webpack-dev-server --save-dev   // Webpack dev server
+     - npm run start:dev
+     
+     - npm install bootstrap                        // 4.1.3
+     - npm install --save jquery popper.js        // Bootstrap Dependences
+     - npm install style-loader css-loader postcss-loader precss autoprefixer sass-loader --save // Loaders
+
 # Local Environment (Windows)
 - noSQL Database
     - MongoDB 3.6
