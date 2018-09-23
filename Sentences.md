@@ -288,6 +288,9 @@ The key's randomart image is:
 
 # Vagrant
 - https://app.vagrantup.com/boxes/search?utf8=✓&sort=downloads&provider=virtualbox
+- New Box (Example):
+    - vagrant init bento/ubuntu-16.04
+    - vagrant up
 - Initialization
     - vagrant up --provider=virtualbox --provision
 
