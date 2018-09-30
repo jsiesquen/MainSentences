@@ -155,6 +155,7 @@ The key's randomart image is:
   - PowerShell Execute: choco install sass (install 1.9.2)
   
   - Usage:
+      - sass --watch style.scss:style.min.css --style compressed
       - sass .\sass\styles.sass:css/style.css
       - scss .\scss\styles2.sass:css/style2.css
       - sass --watch .\sass\styles.sass:css/style.css
