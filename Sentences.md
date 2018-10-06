@@ -1,3 +1,21 @@
+# Webpack
+- Release for Windows 8.12
+- node -v
+- npm install webpack webpack-cli -g       // Global install, release 4.20.2 and cli 3.1.2
+
+
+# webpack-starter-kit@1.0.0
+- npm init                            // Set project information & create package.json (without dependences)
+- npm install webpack webpack-cli -D  // Local installation with development dependencies (use npm install for get dependences)
+- open package.json and set "scripts": { "build": "webpack"}
+- create src folder and create index.js
+- test: npm run build
+- open package.json and set
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
+- npm run build
+- npm run dev
+
 # New projects with NodeJS and Webpack
 - Creating new app based on NodeJS
 - Create folder structure:
