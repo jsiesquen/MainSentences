@@ -26,7 +26,7 @@
         
 - Install modules (webpack now 4.16.3)
     - npm init --yes    // Create a new file "package.json" into root project folder
-    - npm i webpack webpack-dev-server html-webpack-plugin webpack-cli -D // Install Pack moduler, Development Local Server, Cli Webpack and Html to Production. All like DEV dependences.
+    - npm i webpack webpack-dev-server html-webpack-plugin webpack-cli -D // Install Pack moduler, development Local Server, Cli Webpack and html module with (-D) DEV dependencies only.
 - Define input/ouput routing paths
     - On "webpack.config.js"
        const htmlWebpack = require('html-webpack-plugin');
@@ -35,7 +35,7 @@
             entry: './src/app/index.js',
             output: {
                 path: path.join(__dirname, '/dist'),
-                filename: 'bundle.js'
+                filename: 'bundle.js'           // unified file
             }
         },
         devServer: {
