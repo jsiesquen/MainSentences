@@ -283,6 +283,8 @@ The key's randomart image is:
     - docker run -ti --rm --name test ubuntu                        # -ti: interactive terminal; --rm: remove after stop container; 
                                                                     # ubuntu: docker image;
     - docker run -ti --rm --name test-nginx -p 8181:80 nginx
+    - docker run -it -p 139:139 -p 445:445 --name samba -d dperson/samba
+    - docker exec -it samba /bin/bash
 
 - Creating Custom image
    - Create Dockerfile included all commands.
@@ -295,6 +297,8 @@ The key's randomart image is:
     - docker info
     - docker ps -a
     - docker images
+    - docker logs [name or container_id]
+    - docker pause|stop|rm|rmi [name or container_id]
     
   - Important Articles:
     - https://getintodevops.com/blog/keeping-the-whale-happy-how-to-clean-up-after-docker
