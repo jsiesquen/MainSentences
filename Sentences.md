@@ -246,11 +246,58 @@ The key's randomart image is:
 - composer show -i (Show information about packages)
 
 # Docker (https://docs.docker.com/get-started/)
+- Repos: https://hub.docker.com/
 - Linux: https://get.docker.com/
     - sudo curl -fsSL get.docker.com -o get-docker.sh
-    - 
-- Windows (Docker CE): https://store.docker.com/editions/community/docker-ce-desktop-windows
-    - 
+    
+    Quick:
+    - yum -y install docker     # Installiing Docker
+    - systemctl enable docker   # Enable Docker Service
+    - systemctl start docker    # Start Docker Service
+    - docker run hello-world    # Testing
+    
+    From Docker.com: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
+    - sudo apt-get update
+    - sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+    - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    - sudo apt-key fingerprint 0EBFCD88
+    - sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   - sudo apt-get update
+   - sudo apt-get install docker-ce
+   - apt-cache madison docker-ce
+   - sudo docker run hello-world
+    
+- Windows: 
+    - Without Hyper-V - Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
+    - With Hyper-V - Docker CE: https://store.docker.com/editions/community/docker-ce-desktop-windows
+
+- On Runtime:
+    - docker run -ti --rm --name test ubuntu bash
+    - docker run -ti --rm --name test ubuntu                        # -ti: interactive terminal; --rm: remove after stop container; 
+                                                                    # ubuntu: docker image;
+    - docker run -ti --rm --name test-nginx -p 8181:80 nginx
+
+- Creating Custom image
+   - Create Dockerfile included all commands.
+   - Execute:
+    - docker build -t custom-nginx .
+    - docker run -d --name nginx -p 8080:80 custom-nginx
+    - curl localhost:8080
+
+ - Key Commands
+    - docker info
+    - docker ps -a
+    - docker images
+    
+  - Important Articles:
+    - https://getintodevops.com/blog/keeping-the-whale-happy-how-to-clean-up-after-docker
 
 # Git
 - Config
