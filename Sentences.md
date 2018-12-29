@@ -349,7 +349,13 @@ The key's randomart image is:
     - git commit -m "first commit"
     - git remote add origin https://github.com/jsiesquen/GithubClient.git
     - git push -u origin master
-    
+- More:
+    - git commit --amend -m "New commit message"        // change the commit message
+    - git add file6 && git commit --amend --no-edit     // add file to MY previous commit itself
+    - git config user.email "your email id"             // configure the email id for current project after of commit
+    - git commit --amend --author "Author Name <Email>"  // Change the author of your previous commit as well (local repo)
+    - 
+
 # MySQL
 - vim /etc/mysql/debian.cnf
 - mysql -u debian-sys-maint -p[xxxxxxxx]
