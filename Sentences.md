@@ -3,9 +3,8 @@
 - node -v
 - npm install webpack webpack-cli -g       // Global install, release 4.20.2 and cli 3.1.2
 
-
 # webpack-starter-kit@1.0.0
-- npm init                            // Set project information & create package.json (without dependences)
+- npm init                                  // Set project information & create package.json (without dependences)
 - npm install webpack webpack-cli -D  // Local installation with development dependencies (use npm install for get dependences)
 - open package.json and set "scripts": { "build": "webpack"}
 - create src folder and create index.js
@@ -110,46 +109,57 @@
     $ browser-sync --version
       2.24.4
     $ npm init (for new projects)
-    # npm install --save-dev browser-sync
+    $ npm install --save-dev browser-sync
 
 - ReactJS
-- npx create-react-app crud-app
-- cd crud-app
-- yarn start // Starts the development server (recommended)
-- yarn build // Bundles the app into static files for production.
-- yarn test  // Starts the test runner.
-- yarn eject // Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
+    - npx create-react-app crud-app
+    - cd crud-app
+    - yarn start // Starts the development server (recommended)
+    - yarn build // Bundles the app into static files for production.
+    - yarn test  // Starts the test runner.
+    - yarn eject // Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
+    * https://reactjs.org/community/examples.html
 
 - Laravel:
-   $ cd D:\JSiesquen\Box\Homestead
-   $ vagrant box add laravel/homestead
-   
-   $ git clone https://github.com/laravel/homestead.git .
-   $ git checkout v7.4.2
-   $ bash init.sh (init.bat)
-   
-   $ ssh-keygen -t rsa -C "my.email@gmail.com"
-Generating public/private rsa key pair.
-Enter file in which to save the key (/c/Users/Neksix/.ssh/id_rsa):
-Created directory '/c/Users/Neksix/.ssh'.
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /c/Users/Neksix/.ssh/id_rsa.
-Your public key has been saved in /c/Users/Neksix/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:d/e96vcpv0YyrgOe72r1CHxA "my.email@gmail.com"
-The key's randomart image is:
-+---[RSA 2048]----+
-|          ..     |
-|          o. E   |
-|         o..  .  |
-|        . .. .   |
-|     o..++==+=B*=|
-+----[SHA256]-----+
-    
-   $ Edit Homestead.yaml file
-   $ Edit host file (Windows) or hostname (Linux)
-   $ vagrant up
+    - cd D:\JSiesquen\Box\Homestead
+    - vagrant box add laravel/homestead
+
+            ==> box: Loading metadata for box 'laravel/homestead'
+                box: URL: https://vagrantcloud.com/laravel/homestead
+            ==> box: Adding box 'laravel/homestead' (v8.2.1) for provider: virtualbox
+                box: Downloading: https://vagrantcloud.com/laravel/boxes/homestead/versions/8.2.1/providers/virtualbox.box
+                box: Download redirected to host: vagrantcloud-files-production.s3.amazonaws.com
+                box: Progress: 100% (Rate: 106k/s, Estimated time remaining: --:--:--)
+            ==> box: Successfully added box 'laravel/homestead' (v8.2.1) for 'virtualbox'!
+
+    - git clone https://github.com/laravel/homestead.git .
+    - git checkout release      // v7.4.2
+    - init.bat                  // For Windows
+    - bash init.sh              // For Linux (Ok)
+        * Homestead initialized!
+    - ssh-keygen -t rsa -C "my.email@gmail.com"
+
+            Generating public/private rsa key pair.
+            Enter file in which to save the key (/c/Users/Neksix/.ssh/id_rsa):
+            Created directory '/c/Users/Neksix/.ssh'.
+            Enter passphrase (empty for no passphrase):
+            Enter same passphrase again:
+            Your identification has been saved in /c/Users/Neksix/.ssh/id_rsa.
+            Your public key has been saved in /c/Users/Neksix/.ssh/id_rsa.pub.
+            The key fingerprint is:
+            SHA256:d/e96vcpv0YyrgOe72r1CHxA "my.email@gmail.com"
+            The key's randomart image is:
+            +---[RSA 2048]----+
+            |          ..     |
+            |          o. E   |
+            |         o..  .  |
+            |        . .. .   |
+            |     o..++==+=B*=|
+            +----[SHA256]-----+
+
+    - Edit Homestead.yaml file
+    - Edit host file (Windows) or hostname (Linux)
+    - vagrant up
 
 # NPM
 - Update: sudo npm install -g npm
@@ -245,7 +255,8 @@ The key's randomart image is:
 - composer install (Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.)
 - composer show -i (Show information about packages)
 
-# Docker (https://docs.docker.com/get-started/)
+# Docker
+- https://docs.docker.com/get-started/
 - Repos: https://hub.docker.com/
 - Linux: https://get.docker.com/
     - sudo curl -fsSL get.docker.com -o get-docker.sh
@@ -303,7 +314,7 @@ The key's randomart image is:
   - Important Articles:
     - https://getintodevops.com/blog/keeping-the-whale-happy-how-to-clean-up-after-docker
 
-# Git
+# GIT
 - Config
     - git config --global user.email "email@gmail.com"
     - git config --global user.name "John Doe"
@@ -317,7 +328,6 @@ The key's randomart image is:
     - git remote -v
 - Switched to a another branch
     - git checkout develop
-
 - Show the working tree status
     - git status
     - git diff                    //check diff between files prepared for commit
@@ -362,7 +372,7 @@ The key's randomart image is:
 - SET PASSWORD FOR 'user-name-here'@'hostname' = PASSWORD('new-password');      // <5.7.5
 - ALTER USER 'user'@'hostname' IDENTIFIED BY 'newPass';   // >5.7.6
 
-# Vagrant
+# Vagrant Starter
 - https://app.vagrantup.com/boxes/search?utf8=✓&sort=downloads&provider=virtualbox
 - New Box (Example):
     - vagrant init bento/ubuntu-16.04
@@ -373,25 +383,25 @@ The key's randomart image is:
 
 # Drupal 8 
 - which drush
-/home/vagrant/.composer/vendor/bin/drush
+    * /home/vagrant/.composer/vendor/bin/drush
 - brew install drush    // if aren't install
 - drush dl drupal-8 --select
-Choose one of the available releases for drupal:
- [0]  :  Cancel
- [1]  :  8.7.x-dev    -  2018-Aug-06  -  Development
- [2]  :  8.6.0-beta2  -  2018-Aug-03  -  Supported
- [3]  :  8.5.6        -  2018-Aug-01  -  Security, Recommended
-3
-Project drupal (8.5.6) downloaded to /home/vagrant/code/drupal8.test/public/drupal-8.5.6.                                                                                                                                          [success]
-Project drupal contains:                                                                                                                                                                                                           [success]
- - 2 profiles: standard, demo_umami
- - 16 themes: classy, stark, seven, bartik, twig, stable, demo_umami_content, umami, testing_multilingual, testing_missing_dependencies, testing_multilingual_with_english, drupal_system_listing_compatible_test, testing,
-testing_config_overrides, testing_config_import, minimal
- - 75 modules: field, file, block, system, tracker, contextual, serialization, language, inline_form_errors, hal, layout_builder, big_pipe, responsive_image, content_translation, ban, content_moderation, help, dblog, views_ui,
-block_place, telephone, migrate_drupal, breakpoint, datetime_range, views, statistics, path, history, node, migrate, menu_link_content, datetime, menu_ui, rdf, color, book, filter, contact, ckeditor, editor, image,
-field_layout, workflows, comment, locale, taxonomy, search, settings_tray, entity_reference, user, shortcut, rest, basic_auth, field_ui, syslog, options, aggregator, simpletest, text, quickedit, page_cache, dynamic_page_cache,
-toolbar, automated_cron, config_translation, media, forum, migrate_drupal_ui, update, tour, block_content, config, link, layout_discovery, action
 
+        Choose one of the available releases for drupal:
+        [0]  :  Cancel
+        [1]  :  8.7.x-dev    -  2018-Aug-06  -  Development
+        [2]  :  8.6.0-beta2  -  2018-Aug-03  -  Supported
+        [3]  :  8.5.6        -  2018-Aug-01  -  Security, Recommended
+
+    Project drupal (8.5.6) downloaded to /home/vagrant/code/drupal8.test/public/drupal-8.5.6. [success]
+    Project drupal contains: [success]
+    - 2 profiles: standard, demo_umami
+    - 16 themes: classy, stark, seven, bartik, twig, stable, demo_umami_content, umami, testing_multilingual, testing_missing_dependencies, testing_multilingual_with_english, drupal_system_listing_compatible_test, testing,
+    testing_config_overrides, testing_config_import, minimal
+    - 75 modules: field, file, block, system, tracker, contextual, serialization, language, inline_form_errors, hal, layout_builder, big_pipe, responsive_image, content_translation, ban, content_moderation, help, dblog, views_ui,
+    block_place, telephone, migrate_drupal, breakpoint, datetime_range, views, statistics, path, history, node, migrate, menu_link_content, datetime, menu_ui, rdf, color, book, filter, contact, ckeditor, editor, image,
+    field_layout, workflows, comment, locale, taxonomy, search, settings_tray, entity_reference, user, shortcut, rest, basic_auth, field_ui, syslog, options, aggregator, simpletest, text, quickedit, page_cache, dynamic_page_cache,
+    toolbar, automated_cron, config_translation, media, forum, migrate_drupal_ui, update, tour, block_content, config, link, layout_discovery, action
 
 # Magento QA Code
     - https://github.com/magento/marketplace-tools
@@ -491,19 +501,32 @@ toolbar, automated_cron, config_translation, media, forum, migrate_drupal_ui, up
 - php bin/magento deploy:mode:show
 - php bin/magento deploy:mode:set developer|production
 - php bin/magento indexer:reindex catalogrule_rule
-- php bin/magento module:status                                            # Module Status
-- php bin/magento module:enable J2t_Payplug --clear-static-content         # Enable
-- php bin/magento setup:upgrade                                            # Register
-- php bin/magento setup:di:compile                                         # Recompile
+- php bin/magento module:status         // Module Status
+- php bin/magento module:enable J2t_Payplug --clear-static-content  //Enable
+- php bin/magento setup:upgrade         // Register
+- php bin/magento setup:di:compile      // Recompile
 - php bin/magento module:status
-- rm -rf var/di var/cache var/generation/ var/page_cache/                  # remove temps
-
+- rm -rf var/di var/cache var/generation/ var/page_cache/   // Remove temps
 
 # AWS
 - https://www.linkedin.com/pulse/listado-de-todos-los-servicios-amazon-web-services-daniel-pe%C3%B1a-silva/?published=t
 
 
-# CMS
+# **CMS**
+# Wordpress
+- Ref: https://www.howtoforge.com/setup-a-local-wordpress-development-environment-with-vagrant/
+- vagrant -v
+- vagrant plugin install vagrant-hostsupdater  // On OS's hosts file
+
+            Installing the 'vagrant-hostsupdater' plugin. This can take a few minutes...
+            Fetching: vagrant-hostsupdater-1.1.1.160.gem (100%)
+            Installed the plugin 'vagrant-hostsupdater (1.1.1.160)'!
+- git clone -b master git://github.com/Varying-Vagrant-Vagrants/VVV.git ~/vvv
+- cd vvv            // C:\Users\EB9263\~\vvv
+- vagrant up        // Varying Vagrant Vagrants v3.1.1 C:/Users/EBXXXX/~/vvv
+- Add new site on vvv-custom.yml
+- vagrant reload --provision
+
 # Concrete5
 - (https://github.com/concrete5/composer)
 - mkdir concrete5.test
@@ -531,26 +554,26 @@ Checking optional preconditions:
 - Remote File Importing... passed.
 - Zip Support... passed.
 
-Location of database server? [127.0.0.1]:
-Database name?: themeconcrete5
-Database username?: root
-Database password?:
-The system time zone, compatible with the database one? [UTC]:
-Name of the site? [concrete5 Site]: Neksix Site
-Canonical URL?: http://themeconcrete5.test/
-Alternative canonical URL?: http://themeconcrete5.test/
-Starting point to use? [elemental_blank]:
-  [0] elemental_blank
-  [1] elemental_full
- > 1
-Email of the admin user of the install? [admin@example.com]: jsiesquen@adperu.com
-Password of the admin user of the install?:
-Additional user username?: jsiesquen
-Additional user email? [demo@example.com]: jsiesquen@neksix.com
-Additional user password?:
-The default concrete5 interface language (eg en_US)? [en_US]: es_ES
-The default site locale (eg en_US)? [es_ES]:
-Use configuration file for installation? [none]:
+        Location of database server? [127.0.0.1]:
+        Database name?: themeconcrete5
+        Database username?: root
+        Database password?:
+        The system time zone, compatible with the database one? [UTC]:
+        Name of the site? [concrete5 Site]: Neksix Site
+        Canonical URL?: http://themeconcrete5.test/
+        Alternative canonical URL?: http://themeconcrete5.test/
+        Starting point to use? [elemental_blank]:
+        [0] elemental_blank
+        [1] elemental_full
+        > 1
+        Email of the admin user of the install? [admin@example.com]: jsiesquen@adperu.com
+        Password of the admin user of the install?:
+        Additional user username?: jsiesquen
+        Additional user email? [demo@example.com]: jsiesquen@neksix.com
+        Additional user password?:
+        The default concrete5 interface language (eg en_US)? [en_US]: es_ES
+        The default site locale (eg en_US)? [es_ES]:
+        Use configuration file for installation? [none]:
 
 Checking required configuration preconditions:
 - Canonical URLs... passed.
@@ -561,51 +584,52 @@ Checking optional configuration preconditions:
 - Database time zone... passed.
 - Table case... passed (Table names are stored in the specified lettercase (lookups are performed in a case-sensitive way).).
 
-+---------------------------+-----------------------------+
-| Question                  | Value                       |
-+---------------------------+-----------------------------+
-| env                       |                             |
-| db-server                 | 127.0.0.1                   |
-| db-username               | root                        |
-| db-password               | HIDDEN                      |
-| db-database               | themeconcrete5              |
-| timezone                  | UTC                         |
-| site                      | Neksix Site                 |
-| canonical-url             | http://themeconcrete5.test/ |
-| canonical-url-alternative | http://themeconcrete5.test/ |
-| starting-point            | elemental_full              |
-| admin-email               | jsiesquen@adperu.com        |
-| admin-password            | HIDDEN                      |
-| demo-username             | jsiesquen                   |
-| demo-password             | HIDDEN                      |
-| demo-email                | jsiesquen@neksix.com        |
-| language                  | es_ES                       |
-| site-locale               | es_ES                       |
-| config                    | none                        |
-+---------------------------+-----------------------------+
-Would you like to install with these settings? [Y]es / [N]o / [E]dit: Y
+        +---------------------------+-----------------------------+
+        | Question                  | Value                       |
+        +---------------------------+-----------------------------+
+        | env                       |                             |
+        | db-server                 | 127.0.0.1                   |
+        | db-username               | root                        |
+        | db-password               | HIDDEN                      |
+        | db-database               | themeconcrete5              |
+        | timezone                  | UTC                         |
+        | site                      | Neksix Site                 |
+        | canonical-url             | http://themeconcrete5.test/ |
+        | canonical-url-alternative | http://themeconcrete5.test/ |
+        | starting-point            | elemental_full              |
+        | admin-email               | jsiesquen@adperu.com        |
+        | admin-password            | HIDDEN                      |
+        | demo-username             | jsiesquen                   |
+        | demo-password             | HIDDEN                      |
+        | demo-email                | jsiesquen@neksix.com        |
+        | language                  | es_ES                       |
+        | site-locale               | es_ES                       |
+        | config                    | none                        |
+        +---------------------------+-----------------------------+
+        Would you like to install 
+        with these settings? [Y]es / [N]o / [E]dit: Y
 
-5%: Starting installation and creating directories.
-10%: Creating database tables.
-12%: Creating site.
-15%: Adding admin user.
-20%: Installing permissions & workflow.
-23%: Installing Custom Data Objects.
-26%: Creating home page.
-30%: Installing attributes.
-35%: Adding block types.
-39%: Adding gathering data sources.
-40%: Page type basic setup.
-45%: Adding themes.
-47%: Installing automated jobs.
-50%: Installing dashboard.
-55%: Installing login and registration pages.
-57%: Adding image editor functionality.
-60%: Configuring site.
-65%: Importing files.
-70%: Adding pages and content.
-85%: Adding desktops.
-90%: Setting site permissions.
-95%: Finishing.
-Adding demo user... done.
-Installation Complete!
+        5%: Starting installation and creating directories.
+        10%: Creating database tables.
+        12%: Creating site.
+        15%: Adding admin user.
+        20%: Installing permissions & workflow.
+        23%: Installing Custom Data Objects.
+        26%: Creating home page.
+        30%: Installing attributes.
+        35%: Adding block types.
+        39%: Adding gathering data sources.
+        40%: Page type basic setup.
+        45%: Adding themes.
+        47%: Installing automated jobs.
+        50%: Installing dashboard.
+        55%: Installing login and registration pages.
+        57%: Adding image editor functionality.
+        60%: Configuring site.
+        65%: Importing files.
+        70%: Adding pages and content.
+        85%: Adding desktops.
+        90%: Setting site permissions.
+        95%: Finishing.
+        Adding demo user... done.
+        Installation Complete!
