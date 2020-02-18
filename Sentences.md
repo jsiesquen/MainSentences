@@ -163,13 +163,22 @@
 
 # NPM
 - Update: sudo npm install -g npm
+- npm list -g --depth=0
 - On Windows NodeJS install (node -v => v8.11.3; npm -v => 5.6.0).
 
-# FrontEnd Commands
+# Angular
 - npm install -g @angular/cli        # install
 - npm uninstall -g @angular/cli      # upgrade (1)
 - npm cache clean                    # upgrade (2) 
 - npm install -g @angular/cli@latest # upgrade (3) if npm version is > 5 then use `npm cache verify` to avoid errors (or to avoid using --force)
+
+# Minify on Demand #
+- npm install uglifyjs -g (doesn't support ES6+)
+    - uglifyjs _src/js/global.js -c -o _src/files/global.js
+- npm install terser -g (mangler/compressor toolkit for ES6+)
+    - terser _src/js/checkout5-custom.js -c -m -o Code/Files/checkout5-custom.js
+- npm install uglifycss -g
+    - uglifycss _src/css/checkout5-custom.css > code/files/checkout5-custom.css
 
 # SASS https://sass-lang.com:
 - Linux Install: sudo npm install -g sass (Nice! => )
@@ -345,6 +354,7 @@
     - git reset <file>               // Remove "Add" action previously
 - Recovery new changes (Fetch from and integrate with another repository or a local branch) 
     - git pull
+    - git pull origin Desarrollo
 - Show commit logs
     - git log
 - Show all commits
