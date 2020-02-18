@@ -120,8 +120,18 @@
     - yarn eject // Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
     * https://reactjs.org/community/examples.html
 
+- Wordpress:
+    - Using: http://vccw.cc/
+    - cd \JSiesquen\Box\vccw-3.21.1\
+    - vagrant up
+    - vagrant reload --provision
+    - vagrant ssh
+    - sudo nano /etc/php/7.0/apache2/php.ini
+    - sudo systemctl status apache2.service
+    - sudo systemctl restart apache2.service
+
 - Laravel:
-    - cd D:\JSiesquen\Box\Homestead
+    - cd \JSiesquen\Box\Homestead
     - vagrant box add laravel/homestead
 
             ==> box: Loading metadata for box 'laravel/homestead'
@@ -525,7 +535,7 @@
 # **CMS**
 # Wordpress
 - Ref: https://www.howtoforge.com/setup-a-local-wordpress-development-environment-with-vagrant/
-- vagrant -v
+- vagrant -v        // 2.2.5
 - vagrant plugin install vagrant-hostsupdater  // On OS's hosts file
 
             Installing the 'vagrant-hostsupdater' plugin. This can take a few minutes...
