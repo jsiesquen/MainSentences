@@ -356,6 +356,14 @@
     - git checkout -- <file>
 - Revert (reset) a single file to a specific revision (with Previous Commit)
     - git checkout <commit_hash> -- <file>
+- Commit and Push (If repository aren't exist yet)
+    - <<Enter local folder>>
+    - git init
+    - git status                      
+    - git add -A                     // Add file contents to the index
+    - git commit -m "message"        // Record changes to the repository
+    - git remove add origin git@github.com:jsiesquen/repository-name.git
+    - git push -u origin master
 - Commit and Push
     - git add .                      // Add file contents to the index
     - git commit -a -m "message"     // Record changes to the repository; -a for ommit "git add" command
