@@ -112,6 +112,7 @@
     $ npm install --save-dev browser-sync
 
 - ReactJS
+    - npx -v     // 6.14.3
     - npx create-react-app crud-app
     - cd crud-app
     - yarn start // Starts the development server (recommended)
@@ -175,6 +176,8 @@
 - Update: sudo npm install -g npm
 - npm list -g --depth=0
 - On Windows NodeJS install (node -v => v8.11.3; npm -v => 5.6.0).
+- node -v   // v12.16.1
+- npm -v    // 6.14.3
 
 # Angular
 - npm install -g @angular/cli        # install
