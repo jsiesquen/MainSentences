@@ -177,7 +177,7 @@
 - npm list -g --depth=0
 - On Windows NodeJS install (node -v => v8.11.3; npm -v => 5.6.0).
 - node -v   // v12.16.1
-- npm -v    // 6.14.3
+- npm -v    // 6.13.4, 6.14.3, 6.14.8
 
 # Angular
 - npm install -g @angular/cli        # install
