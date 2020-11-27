@@ -541,7 +541,61 @@
 
 # AWS
 - https://www.linkedin.com/pulse/listado-de-todos-los-servicios-amazon-web-services-daniel-pe%C3%B1a-silva/?published=t
+- https://www.aws.training/Dashboard
 
+# AWS CLI 2 (AWS Command Line Interface)
+$ where aws
+    ```
+    C:\Program Files\Python37\Scripts\aws
+    C:\Program Files\Python37\Scripts\aws.cmd
+    C:\Program Files\Amazon\AWSCLIV2\aws.exe
+    ```
+- aws --version     (Output: aws-cli/2.0.0 Python/3.7.5 Windows/7 botocore/2.0.0dev4;
+                        C:\Users\<user>\.aws\config|credentials)
+- aws configure --profile <profile>
+- aws configure get region --profile <profile>
+- aws ec2 describe-instances --profile <profile>
+- export AWS_PROFILE=<profile>
+- git clone codecommit://<profile>@template-backend-nodejs
+
+# Python
+- python --version  (Output: Python 3.7.4)
+
+# PIP Package Management
+- Download packages from PyPI (Python Package Index - Repository Central)
+- Install: https://pip.pypa.io/en/stable/installing/
+    - Download: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    - python get-pip.py
+        ```
+        Collecting pip
+        Downloading pip-20.0.2-py2.py3-none-any.whl (1.4 MB)
+            |████████████████████████████████| 1.4 MB 1.3 MB/s
+        Collecting wheel
+        Downloading wheel-0.34.2-py2.py3-none-any.whl (26 kB)
+        Installing collected packages: pip, wheel
+        Attempting uninstall: pip
+            Found existing installation: pip 19.0.3
+            Uninstalling pip-19.0.3:
+            Successfully uninstalled pip-19.0.3
+        Successfully installed pip-20.0.2 wheel-0.34.2
+        ```
+    - python -m pip install -U pip  (Upgrade)
+- Main Commands:
+    - pip install <package-name>
+    - pip install <package-name>==1.0.0
+    - pip install <package-name> --upgrade
+    - pip install <package-name> --upgrade --force-reinstall (remove)
+    - pip install <package-name> --upgrade --force-reinstall (reinstall)
+    - pip show <package-name>
+    - pip search "query"
+    - pip list
+    - pip list --outdated
+    - pip --version (output: pip 20.0.2 from c:\program files\python37\lib\site-packages\pip (python 3.7))
+    - pip3 --version (output: pip 20.0.2 from c:\program files\python37\lib\site-packages\pip (python 3.7))
+- Install dependences: Active Directory on CodeCommit
+    - pip install awscli
+    - pip install -U git+https://github.com/jatorres5/awsprocesscreds.git
+    - pip install git-remote-codecommit
 
 # **CMS**
 # Wordpress
