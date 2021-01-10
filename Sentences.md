@@ -1,21 +1,51 @@
-# Webpack
-- Release for Windows 8.12
-- node -v
-- npm install webpack webpack-cli -g       // Global install, release 4.20.2 and cli 3.1.2
+# **NPM**
+- Update: sudo npm install -g npm
+    - npm list -g --depth=0 (Work)
+       ```sh
+        +-- madge@4.0.0
+        +-- npm@6.14.11
+        +-- terser@5.5.1
+        `-- uglifycss@0.0.29
+       ```
+- Information:
+    - node -v   // v8.11.3, v12.16.1, v14.15.1
+    - npm -v    // 5.6.0, 6.13.4, 6.14.3, 6.14.8, 6.14.11
 
-# webpack-starter-kit@1.0.0
-- npm init                                  // Set project information & create package.json (without dependences)
-- npm install webpack webpack-cli -D  // Local installation with development dependencies (use npm install for get dependences)
-- open package.json and set "scripts": { "build": "webpack"}
-- create src folder and create index.js
-- test: npm run build
-- open package.json and set
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development"
-- npm run build
-- npm run dev
+# **Compress & Minify**
+## CSS
+```sh
+npm install uglifycss -g
+uglifycss _src/css/global.css > Code/Files/global.css
+```
+## Javascript
+```sh
+npm install terser -g           # mangler/compressor toolkit for ES6+
+terser _src/js/global.js -c -m -o Code/Files/global.js
+npm install uglifyjs -g         # No support ES6+
+uglifyjs _src/js/global.js -c -o _src/files/global.js
+npm install uglify-js -g        # Support ES5 only
+uglifyjs -c -m -- _src/js/global.js
+```
 
-# New projects with NodeJS and Webpack
+# **TypeScript**
+- tsc -init
+- tsc -w
+
+# **Webpack**
+```sh
+$ node -v       # 8.12
+$ npm install webpack webpack-cli -g    # Global install, release 4.20.2 and cli 3.1.2
+```
+
+## Webpack-starter-kit@1.0.0
+```sh
+$ npm init                            # Set project information & create package.json (without dependences)
+$ npm install webpack webpack-cli -D  # Local installation with development dependencies (use npm install for get dependences) open package.json and set "scripts": { "build": "webpack" create src folder and create index.js test: npm run build, open package.json and set: "build": "webpack --mode production", "dev": "webpack --mode development"
+$ npm run build
+$ npm run dev
+```
+
+## New projects with NodeJS and Webpack
 - Creating new app based on NodeJS
 - Create folder structure:
     - [root_project]
@@ -24,17 +54,20 @@
         - src/app/index.js
         
 - Install modules (webpack now 4.16.3)
-    - npm init --yes    // Create a new file "package.json" into root project folder
-    - npm i webpack webpack-dev-server html-webpack-plugin webpack-cli -D // Install Pack moduler, development Local Server, Cli Webpack and html module with (-D) DEV dependencies only.
+    ```sh
+    $ npm init --yes    # Create a new file "package.json" into root project folder
+    $ npm i webpack webpack-dev-server html-webpack-plugin webpack-cli -D # Install Pack moduler, development Local Server, Cli Webpack and html module with (-D) DEV dependencies only.
+    ```
 - Define input/ouput routing paths
     - On "webpack.config.js"
-       const htmlWebpack = require('html-webpack-plugin');
-       const path = require('path');
-       module.exports = {
+        ```sh
+        const htmlWebpack = require('html-webpack-plugin');
+        const path = require('path');
+        module.exports = {
             entry: './src/app/index.js',
             output: {
                 path: path.join(__dirname, '/dist'),
-                filename: 'bundle.js'           // unified file
+                filename: 'bundle.js'
             }
         },
         devServer: {
@@ -45,19 +78,20 @@
                 template: './src/index.html'
             })
         ]
-        
+        ```
     - On "package.json"
+        ```sh
         "scripts": {
             "build": "webpack --mode production",
             "dev": "webpack-dev-server --mode development"
         },
-    
+        ```
+
 - Testing output files
     - npm run build     // Create new files: dist/bundle.js and index.html within dist folder.
     - npm run dev       // Run local server for test our changes.
 
-
-# New Web projects with NodeJS+Webpack+Bootstrap
+## New Web project with Node + Webpack + Bootstrap
 - Create folder structure:
     - [root_project]
         - src/index.html
@@ -65,76 +99,142 @@
         - src/main.css
         
 - Install modules (webpack 4.16.5, webpack-cli 3.1.0)
-    - npm init --yes         // Create a new file "package.json" within project folder
-    - npm i webpack --save-dev
-    - npm i webpack-cli --save-dev
-    - Now open up package.json and add a build script:
-        "scripts": {
-          ...
-          "dev": "webpack --mode development",
-          "build": "webpack --mode production"
-        }
-     - npm run build        // Create a minified bundle file within dist/main.js
-     - npm run dev          // Create a bundle file within dist/main.js
-     - npm i babel-core babel-loader babel-preset-env --save-dev        // Transpiling JS ES6 with Babel
-     - npm i html-webpack-plugin html-loader --save-dev     // Additional components for processing HTML
-     - npm i mini-css-extract-plugin css-loader --save-dev  // Extract CSS
-     - npm i webpack-dev-server --save-dev   // Webpack dev server
-     - npm run start:dev
-     
-     - npm install bootstrap                        // 4.1.3
-     - npm install --save jquery popper.js        // Bootstrap Dependences
-     - npm install style-loader css-loader postcss-loader precss autoprefixer sass-loader --save // Loaders
+    ```sh
+    $ npm init --yes         # Create a new file "package.json" within project folder
+    $ npm i webpack --save-dev
+    $ npm i webpack-cli --save-dev
+    # Now open up package.json and add a build script:
+    #    "scripts": {
+    #      ...
+    #      "dev": "webpack --mode development",
+    #      "build": "webpack --mode production"
+    #    }
+    $ npm run build        # Create a minified bundle file within dist/main.js
+    $ npm run dev          # Create a bundle file within dist/main.js
+    $ npm i babel-core babel-loader babel-preset-env --save-dev        # Transpiling JS ES6 with Babel
+    $ npm i html-webpack-plugin html-loader --save-dev     # Additional components for processing HTML
+    $ npm i mini-css-extract-plugin css-loader --save-dev  # Extract CSS
+    $ npm i webpack-dev-server --save-dev   # Webpack dev server
+    $ npm run start:dev
+    $ npm install bootstrap                      # 4.1.3
+    $ npm install --save jquery popper.js        # Bootstrap Dependences
+    $ npm install style-loader css-loader postcss-loader precss autoprefixer sass-loader --save # Loaders
+    ```
 
-# Local Environment (Windows)
+# **GIT**
+- Config
+    - git config --global user.email "email@gmail.com"
+    - git config --global user.name "John Doe"
+- Change login authentication (.git/config)
+    - git config -e
+- Clone repo remote
+    - git clone http://user@server.com/package.git new_folder
+- Download objects and refs from another repository
+    - git fetch
+- State Latest of repository
+    - git remote -v
+- Change Remote URL from SSH a HTTPS
+    - git remote set-url origin https://github.com/name/repo.git
+- Switched to a another branch
+    - git checkout develop
+- Show the working tree status
+    - git status
+    - git diff                    //check diff between files prepared for commit
+    - git diff --cached           //check diff between files no prepared
+    - git diff --staged           //check diff between files no prepared
+- Revert (reset) changes to a file if they haven’t been committed yet:
+    - git checkout -- <file>
+- Revert (reset) a single file to a specific revision (with Previous Commit)
+    - git checkout <commit_hash> -- <file>
+- Commit and Push (If repository aren't exist yet)
+    ```sh
+    <<Enter local folder>>
+    git init
+    git status                      
+    git add -A                # Add file contents to index
+    git commit -m "message"   # Record changes on repository
+    git remove add origin git@github.com:jsiesquen/repository-name.git
+    git push -u origin master
+    ```
+- Commit and Push
+    ```sh
+    git add .                   # Add file content to index
+    git commit -a -m "message"  # Save changes on repository
+                                # -a for ommit "git add" command
+    git push origin develop     # Update remote refs along with associated objects
+    git reset HEAD~             # Undo a commit and redo
+    git reset <file>            # Remove "Add" action previously
+    ```
+- Recovery new changes (Fetch from and integrate with another repository or a local branch) 
+    - git pull
+    - git pull origin Desarrollo
+- Show commit logs
+    - git log
+- Show all commits
+    - git log --all --oneline
+- Target to hash
+    - git checkou <hash>   // Previuos State
+    - git checkou master   // Current State
+- Initializate a existent repository on existing local code
+    - echo "# GithubClient" >> README.md
+    - git init
+    - git add README.md
+    - git commit -m "first commit"
+    - git remote add origin https://github.com/jsiesquen/GithubClient.git
+    - git push -u origin master
+- More:
+    - git commit --amend -m "New commit message"        // change the commit message
+    - git add file6 && git commit --amend --no-edit     // add file to MY previous commit itself
+    - git config user.email "your email id"             // configure the email id for current project after of commit
+    - git commit --amend --author "Author Name <Email>"  // Change the author of your previous commit as well (local repo)
+
+# **Local Environment (Windows)**
 - noSQL Database
     - MongoDB 3.6
-
 - WebApps
     - Typescript 2.7.1
     - Angular CLI: 1.6.8
     - Node 8.9.4 LTS, NPM 5.6.0
-    
 - Mobile
     - Android Studio 3
-
 - DevOps
     - Vagrant 2.0.1
     - VirtualBox 5.2.6
     - Docker CE 17.12
-
 - Web-Tools:
 - BrowerSync
+    ```sh
     $ npm install -g browser-sync
     $ browser-sync --version
       2.24.4
     $ npm init (for new projects)
     $ npm install --save-dev browser-sync
-
+    ```
 - ReactJS
-    - npx -v     // 6.14.3
+    ```sh
+    - npx -v        # 6.14.3
     - npx create-react-app crud-app
     - cd crud-app
-    - yarn start // Starts the development server (recommended)
-    - yarn build // Bundles the app into static files for production.
-    - yarn test  // Starts the test runner.
-    - yarn eject // Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
-    * https://reactjs.org/community/examples.html
-
-- Wordpress:
-    - Using: http://vccw.cc/
-    - cd \JSiesquen\Box\vccw-3.21.1\
-    - vagrant up
-    - vagrant reload --provision
-    - vagrant ssh
-    - sudo nano /etc/php/7.0/apache2/php.ini
-    - sudo systemctl status apache2.service
-    - sudo systemctl restart apache2.service
-
+    - yarn start    # Starts the development server (recommended)
+    - yarn build    # Bundles the app into static files for production.
+    - yarn test     # Starts the test runner.
+    - yarn eject    # Removes this tool and copies build dependencies, configuration files and scripts into the app directory.
+    ```
+- [Wordpress](http://vccw.cc)
+    ```sh
+    $ cd \JSiesquen\Box\vccw-3.21.1\
+    $ vagrant up
+    $ vagrant reload --provision
+    $ vagrant ssh
+    $ sudo nano /etc/php/7.0/apache2/php.ini
+    $ sudo systemctl status apache2.service
+    $ sudo systemctl restart apache2.service
+    ```
 - Laravel:
-    - cd \JSiesquen\Box\Homestead
-    - vagrant box add laravel/homestead
-
+    - Installation:
+        ```sh
+        $ cd \JSiesquen\Box\Homestead
+        $ vagrant box add laravel/homestead
             ==> box: Loading metadata for box 'laravel/homestead'
                 box: URL: https://vagrantcloud.com/laravel/homestead
             ==> box: Adding box 'laravel/homestead' (v8.2.1) for provider: virtualbox
@@ -142,14 +242,14 @@
                 box: Download redirected to host: vagrantcloud-files-production.s3.amazonaws.com
                 box: Progress: 100% (Rate: 106k/s, Estimated time remaining: --:--:--)
             ==> box: Successfully added box 'laravel/homestead' (v8.2.1) for 'virtualbox'!
-
-    - git clone https://github.com/laravel/homestead.git .
-    - git checkout release      // v7.4.2
-    - init.bat                  // For Windows
-    - bash init.sh              // For Linux (Ok)
-        * Homestead initialized!
-    - ssh-keygen -t rsa -C "my.email@gmail.com"
-
+        
+        $ git clone https://github.com/laravel/homestead.git .
+        $ git checkout release      // v7.4.2
+        $ init.bat                  // For Windows
+        $ bash init.sh              // For Linux (Ok)
+            * Homestead initialized!
+        $ ssh-keygen -t rsa -C "my.email@gmail.com"
+            ```sh
             Generating public/private rsa key pair.
             Enter file in which to save the key (/c/Users/Neksix/.ssh/id_rsa):
             Created directory '/c/Users/Neksix/.ssh'.
@@ -167,33 +267,24 @@
             |        . .. .   |
             |     o..++==+=B*=|
             +----[SHA256]-----+
-
+        ```
     - Edit Homestead.yaml file
     - Edit host file (Windows) or hostname (Linux)
-    - vagrant up
+    - Started
+        ```sh
+        $ vagrant up
+        ```
 
-# NPM
-- Update: sudo npm install -g npm
-- npm list -g --depth=0
-- On Windows NodeJS install (node -v => v8.11.3; npm -v => 5.6.0).
-- node -v   // v12.16.1
-- npm -v    // 6.13.4, 6.14.3, 6.14.8
+# **Angular**
+ ```sh
+$ npm install -g @angular/cli        # install
+$ npm uninstall -g @angular/cli      # upgrade (1)
+$ npm cache clean                    # upgrade (2) 
+$ npm install -g @angular/cli@latest # upgrade (3) if npm version is > 5 then use `npm cache verify` to avoid errors (or to avoid using --force)
+```
 
-# Angular
-- npm install -g @angular/cli        # install
-- npm uninstall -g @angular/cli      # upgrade (1)
-- npm cache clean                    # upgrade (2) 
-- npm install -g @angular/cli@latest # upgrade (3) if npm version is > 5 then use `npm cache verify` to avoid errors (or to avoid using --force)
-
-# Minify on Demand #
-- npm install uglifyjs -g (doesn't support ES6+)
-    - uglifyjs _src/js/global.js -c -o _src/files/global.js
-- npm install terser -g (mangler/compressor toolkit for ES6+)
-    - terser _src/js/checkout5-custom.js -c -m -o Code/Files/checkout5-custom.js
-- npm install uglifycss -g
-    - uglifycss _src/css/checkout5-custom.css > code/files/checkout5-custom.css
-
-# SASS https://sass-lang.com:
+# **SASS** 
+- [SASS](https://sass-lang.com)
 - Linux Install: sudo npm install -g sass (Nice! => )
 - Windows Install: sudo npm install -g sass (Nice! => 1.9.2 compiled with dart2js 2.0.0-dev.66.0)
 
@@ -210,23 +301,20 @@
       - scss .\scss\styles2.sass:css/style2.css
       - sass --watch .\sass\styles.sass:css/style.css
       - sass --watch app/sass:public/stylesheets
-  
-# TypeScript
-- tsc -init
-- tsc -w
 
-# MongoDB (27017 default port)
+# **MongoDB** 
+- 27017 default port
 - Database > Collections (Tables) > Documents (Rows) key-value pair.
 - Document: key (string), value (string, number, array or list, date, boolean, object).
 - use [dbname] / db / show dbs / db.dropDatabase() 
 - db.[collection].insert({"key":"value"}) / db.createCollection("[collection]") / show collections / db.[collection].drop()
 
-# Sublime Text 3
-- Install Package Controls: https://packagecontrol.io/installation
+# **IDE**
+## Sublime Text 3
+- [Install Package Controls](https://packagecontrol.io/installation) 
 - See Preferences > Package Control. After Install [E] => HTML5, EMMET, AutoFilename, SFTP, Bootstrap 3 Snippets, Bootstrap 4 Snippets, jQuery, BracketHighlighter.
 
-
-# Linux
+# **Linux**
 - Find distribution version
     - uname -a
     - lsb_release -a
@@ -267,20 +355,20 @@
 - sudo apt-get update
 - sudo apt-get upgrade -y | sudo apt-get dist-upgrade -y
 
-# Nginx
+# **Nginx**
 - /etc/php/7.0/fpm/pool.d/www.conf   # Time Out limits
 - sudo systemctl status nginx |service nginx status
 - sudo systemctl reload nginx | service nginx reloadg
 
-# Composer
+# **Composer**
 - composer create-project slim/slim-skeleton [my-app-name]
 - composer install (Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.)
 - composer show -i (Show information about packages)
 
-# Docker
-- https://docs.docker.com/get-started/
-- Repos: https://hub.docker.com/
-- Linux: https://get.docker.com/
+# **Docker**
+- [Docker Started](https://docs.docker.com/get-started/)
+- [Docker Hub](https://hub.docker.com)
+- [Docker Linux](https://get.docker.com)
     - sudo curl -fsSL get.docker.com -o get-docker.sh
     
     Quick:
@@ -289,7 +377,7 @@
     - systemctl start docker    # Start Docker Service
     - docker run hello-world    # Testing
     
-    From Docker.com: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
+    [From Docker.com](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository) 
     - sudo apt-get update
     - sudo apt-get install \
     apt-transport-https \
@@ -308,8 +396,8 @@
    - sudo docker run hello-world
     
 - Windows: 
-    - Without Hyper-V - Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
-    - With Hyper-V - Docker CE: https://store.docker.com/editions/community/docker-ce-desktop-windows
+    - [Without Hyper-V - Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)
+    - [With Hyper-V - Docker CE](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
 - On Runtime:
     - docker run -ti --rm --name test ubuntu bash
@@ -336,74 +424,13 @@
   - Important Articles:
     - https://getintodevops.com/blog/keeping-the-whale-happy-how-to-clean-up-after-docker
 
-# GIT
-- Config
-    - git config --global user.email "email@gmail.com"
-    - git config --global user.name "John Doe"
-- Change login authentication (.git/config)
-    - git config -e
-- Clone repo remote
-    - git clone http://user@server.com/package.git new_folder
-- Download objects and refs from another repository
-    - git fetch
-- State Latest of repository
-    - git remote -v
-- Switched to a another branch
-    - git checkout develop
-- Show the working tree status
-    - git status
-    - git diff                    //check diff between files prepared for commit
-    - git diff --cached           //check diff between files no prepared
-    - git diff --staged           //check diff between files no prepared
-- Revert (reset) changes to a file if they haven’t been committed yet:
-    - git checkout -- <file>
-- Revert (reset) a single file to a specific revision (with Previous Commit)
-    - git checkout <commit_hash> -- <file>
-- Commit and Push (If repository aren't exist yet)
-    - <<Enter local folder>>
-    - git init
-    - git status                      
-    - git add -A                     // Add file contents to the index
-    - git commit -m "message"        // Record changes to the repository
-    - git remove add origin git@github.com:jsiesquen/repository-name.git
-    - git push -u origin master
-- Commit and Push
-    - git add .                      // Add file contents to the index
-    - git commit -a -m "message"     // Record changes to the repository; -a for ommit "git add" command
-    - git push origin develop        // Update remote refs along with associated objects
-    - git reset HEAD~                // Undo a commit and redo
-    - git reset <file>               // Remove "Add" action previously
-- Recovery new changes (Fetch from and integrate with another repository or a local branch) 
-    - git pull
-    - git pull origin Desarrollo
-- Show commit logs
-    - git log
-- Show all commits
-    - git log --all --oneline
-- Target to hash
-    - git checkou <hash>   // Previuos State
-    - git checkou master   // Current State
-- Initializate a existent repository on existing local code
-    - echo "# GithubClient" >> README.md
-    - git init
-    - git add README.md
-    - git commit -m "first commit"
-    - git remote add origin https://github.com/jsiesquen/GithubClient.git
-    - git push -u origin master
-- More:
-    - git commit --amend -m "New commit message"        // change the commit message
-    - git add file6 && git commit --amend --no-edit     // add file to MY previous commit itself
-    - git config user.email "your email id"             // configure the email id for current project after of commit
-    - git commit --amend --author "Author Name <Email>"  // Change the author of your previous commit as well (local repo)
-    - 
-
-# MySQL
+# **MySQL**
 - vim /etc/mysql/debian.cnf
 - mysql -u debian-sys-maint -p[xxxxxxxx]
 - SET PASSWORD FOR 'user-name-here'@'hostname' = PASSWORD('new-password');      // <5.7.5
 - ALTER USER 'user'@'hostname' IDENTIFIED BY 'newPass';   // >5.7.6
 
-# Vagrant Starter
+# **Vagrant**
 - https://app.vagrantup.com/boxes/search?utf8=✓&sort=downloads&provider=virtualbox
 - New Box (Example):
     - vagrant init bento/ubuntu-16.04
@@ -412,138 +439,11 @@
 - Initialization
     - vagrant up --provider=virtualbox --provision
 
-# Drupal 8 
-- which drush
-    * /home/vagrant/.composer/vendor/bin/drush
-- brew install drush    // if aren't install
-- drush dl drupal-8 --select
+# **AWS**
+- [Listado de todos los servicios AWS](https://www.linkedin.com/pulse/listado-de-todos-los-servicios-amazon-web-services-daniel-pe%C3%B1a-silva/?published=t)
+- [AWS Training](https://www.aws.training/Dashboard)
 
-        Choose one of the available releases for drupal:
-        [0]  :  Cancel
-        [1]  :  8.7.x-dev    -  2018-Aug-06  -  Development
-        [2]  :  8.6.0-beta2  -  2018-Aug-03  -  Supported
-        [3]  :  8.5.6        -  2018-Aug-01  -  Security, Recommended
-
-    Project drupal (8.5.6) downloaded to /home/vagrant/code/drupal8.test/public/drupal-8.5.6. [success]
-    Project drupal contains: [success]
-    - 2 profiles: standard, demo_umami
-    - 16 themes: classy, stark, seven, bartik, twig, stable, demo_umami_content, umami, testing_multilingual, testing_missing_dependencies, testing_multilingual_with_english, drupal_system_listing_compatible_test, testing,
-    testing_config_overrides, testing_config_import, minimal
-    - 75 modules: field, file, block, system, tracker, contextual, serialization, language, inline_form_errors, hal, layout_builder, big_pipe, responsive_image, content_translation, ban, content_moderation, help, dblog, views_ui,
-    block_place, telephone, migrate_drupal, breakpoint, datetime_range, views, statistics, path, history, node, migrate, menu_link_content, datetime, menu_ui, rdf, color, book, filter, contact, ckeditor, editor, image,
-    field_layout, workflows, comment, locale, taxonomy, search, settings_tray, entity_reference, user, shortcut, rest, basic_auth, field_ui, syslog, options, aggregator, simpletest, text, quickedit, page_cache, dynamic_page_cache,
-    toolbar, automated_cron, config_translation, media, forum, migrate_drupal_ui, update, tour, block_content, config, link, layout_discovery, action
-
-# Magento QA Code
-    - https://github.com/magento/marketplace-tools
-    - https://github.com/magento/marketplace-eqp
-
-# Magento IDE integration
-    - https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm
-
-# Magento 2 Cli
-- Know virtual path admin panel.
-    - vagrant@magento2:/vagrant/source$ ./bin/magento info:adminuri
-
-- php bin/magento cache:status
-
-        Current status:
-                        config: 1
-                        layout: 1
-                    block_html: 1
-                   collections: 1
-                    reflection: 1
-                        db_ddl: 1
-                           eav: 1
-         customer_notification: 0
-                     full_page: 0
-            config_integration: 1
-        config_integration_api: 1
-                     translate: 1
-             config_webservice: 1
-     
-- vagrant@magento2:/vagrant/source$ php bin/magento cache:clean
-
-        Cleaned cache types:
-        config
-        layout
-        block_html
-        collections
-        reflection
-        db_ddl
-        eav
-        customer_notification
-        full_page
-        config_integration
-        config_integration_api
-        translate
-        config_webservice
-
-- vagrant@magento2:/vagrant/source$ php bin/magento cache:flush
-
-        Flushed cache types:
-        config
-        layout
-        block_html
-        collections
-        reflection
-        db_ddl
-        eav
-        customer_notification
-        full_page
-        config_integration
-        config_integration_api
-        translate
-        config_webservice
-
-- vagrant@magento2:/vagrant/source$ php bin/magento setup:static-content:deploy
-
-        Requested languages: en_US
-        Requested areas: frontend, adminhtml
-        Requested themes: Magento/blank, Magento/luma, Magento/backend
-        === frontend -> Magento/blank -> en_US ===
-        === frontend -> Magento/luma -> en_US ===
-        === adminhtml -> Magento/backend -> en_US ===
-
-        Successful: 2013 files; errors: 0
-        ---
-        Successful: 2138 files; errors: 0
-        ---
-        Successful: 2063 files; errors: 0
-        ---
-        === Minify templates ===
-        Successful: 869 files modified
-        ---
-        New version of deployed files: 1513037090
-
-- vagrant@magento2:/vagrant/source$ php bin/magento indexer:status
-
-        Design Config Grid:                                Ready
-        Customer Grid:                                     Ready
-        Category Products:                                 Ready
-        Product Categories:                                Ready
-        Product Price:                                     Ready
-        Product EAV:                                       Ready
-        Catalog Search:                                    Ready
-        Stock:                                             Ready
-        Catalog Rule Product:                              Reindex required
-        Catalog Product Rule:                              Ready
-
-- php bin/magento deploy:mode:show
-- php bin/magento deploy:mode:set developer|production
-- php bin/magento indexer:reindex catalogrule_rule
-- php bin/magento module:status         // Module Status
-- php bin/magento module:enable J2t_Payplug --clear-static-content  //Enable
-- php bin/magento setup:upgrade         // Register
-- php bin/magento setup:di:compile      // Recompile
-- php bin/magento module:status
-- rm -rf var/di var/cache var/generation/ var/page_cache/   // Remove temps
-
-# AWS
-- https://www.linkedin.com/pulse/listado-de-todos-los-servicios-amazon-web-services-daniel-pe%C3%B1a-silva/?published=t
-- https://www.aws.training/Dashboard
-
-# AWS CLI 2 (AWS Command Line Interface)
+## AWS CLI 2 (AWS Command Line Interface)
 $ where aws
     ```
     C:\Program Files\Python37\Scripts\aws
@@ -558,15 +458,15 @@ $ where aws
 - export AWS_PROFILE=<profile>
 - git clone codecommit://<profile>@template-backend-nodejs
 
-# Python
+# **Python**
 - python --version  (Output: Python 3.7.4)
 
-# PIP Package Management
+## PIP Package Management
 - Download packages from PyPI (Python Package Index - Repository Central)
-- Install: https://pip.pypa.io/en/stable/installing/
+- [Install](https://pip.pypa.io/en/stable/installing/)
     - Download: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     - python get-pip.py
-        ```
+        ```sh
         Collecting pip
         Downloading pip-20.0.2-py2.py3-none-any.whl (1.4 MB)
             |████████████████████████████████| 1.4 MB 1.3 MB/s
@@ -597,28 +497,211 @@ $ where aws
     - pip install -U git+https://github.com/jatorres5/awsprocesscreds.git
     - pip install git-remote-codecommit
 
-# **CMS**
-# Wordpress
-- Ref: https://www.howtoforge.com/setup-a-local-wordpress-development-environment-with-vagrant/
+# **Ecommerce Solutions**
+
+## Magento
+    - https://github.com/magento/marketplace-tools
+    - https://github.com/magento/marketplace-eqp
+
+### Magento IDE integration
+    - https://confluence.jetbrains.com/display/PhpStorm/PHP+Code+Sniffer+in+PhpStorm
+
+### Magento 2 Cli
+- Know virtual path admin panel.
+    - vagrant@magento2:/vagrant/source$ ./bin/magento info:adminuri
+
+- php bin/magento cache:status
+    ```sh
+    Current status:
+                    config: 1
+                    layout: 1
+                block_html: 1
+                collections: 1
+                reflection: 1
+                    db_ddl: 1
+                        eav: 1
+        customer_notification: 0
+                    full_page: 0
+        config_integration: 1
+    config_integration_api: 1
+                    translate: 1
+            config_webservice: 1
+    ```
+- vagrant@magento2:/vagrant/source$ php bin/magento cache:clean
+    ```sh
+    Cleaned cache types:
+    config
+    layout
+    block_html
+    collections
+    reflection
+    db_ddl
+    eav
+    customer_notification
+    full_page
+    config_integration
+    config_integration_api
+    translate
+    config_webservice
+    ```
+- vagrant@magento2:/vagrant/source$ php bin/magento cache:flush
+    ```sh
+    Flushed cache types:
+    config
+    layout
+    block_html
+    collections
+    reflection
+    db_ddl
+    eav
+    customer_notification
+    full_page
+    config_integration
+    config_integration_api
+    translate
+    config_webservice
+    ```
+- vagrant@magento2:/vagrant/source$ php bin/magento setup:static-content:deploy
+    ```sh
+    Requested languages: en_US
+    Requested areas: frontend, adminhtml
+    Requested themes: Magento/blank, Magento/luma, Magento/backend
+    === frontend -> Magento/blank -> en_US ===
+    === frontend -> Magento/luma -> en_US ===
+    === adminhtml -> Magento/backend -> en_US ===
+
+    Successful: 2013 files; errors: 0
+    ---
+    Successful: 2138 files; errors: 0
+    ---
+    Successful: 2063 files; errors: 0
+    ---
+    === Minify templates ===
+    Successful: 869 files modified
+    ---
+    New version of deployed files: 1513037090
+    ```
+- vagrant@magento2:/vagrant/source$ php bin/magento indexer:status
+    ```sh
+    Design Config Grid:                                Ready
+    Customer Grid:                                     Ready
+    Category Products:                                 Ready
+    Product Categories:                                Ready
+    Product Price:                                     Ready
+    Product EAV:                                       Ready
+    Catalog Search:                                    Ready
+    Stock:                                             Ready
+    Catalog Rule Product:                              Reindex required
+    Catalog Product Rule:                              Ready
+    ```
+- php bin/magento deploy:mode:show
+- php bin/magento deploy:mode:set developer|production
+- php bin/magento indexer:reindex catalogrule_rule
+- php bin/magento module:status         // Module Status
+- php bin/magento module:enable J2t_Payplug --clear-static-content  //Enable
+- php bin/magento setup:upgrade         // Register
+- php bin/magento setup:di:compile      // Recompile
+- php bin/magento module:status
+- rm -rf var/di var/cache var/generation/ var/page_cache/   // Remove temps
+
+# **CMS Solutions**
+## Gatsby
+- Default Starter: [Getting started](https://www.gatsbyjs.com/docs/quick-start/)
+    - npm init gatsby
+        ```sh
+        What would you like to call your site?
+        √ · My Gatsby 101
+        What would you like to name the folder where your site will be created?
+        √ 101/ gatsby-101
+        √ Will you be using a CMS?
+        · No (or I'll add it later)
+        √ Would you like to install a styling system?
+        · styled-components
+        ? Would you like to install additional features with other plugins?
+        (Multiple choice) Use arrow keys to move, enter to select, and choose "Done" to confirm your choices
+        (*) Add the Google Analytics tracking script
+        (*) Add responsive images
+        ( ) Add page meta tags with React Helmet
+        (*) Add an automatic sitemap
+        ( ) Enable offline functionality
+        (*) Generate a manifest file
+        ( ) Add Markdown support (without MDX)
+        ( ) Add Markdown and MDX support
+        ─────
+        > Done
+
+        Great! A few of the selections you made need to be configured. Please fill in the options for each plugin now:
+
+        √ Configure the gatsby-plugin-google-analytics plugin.
+        See https://www.gatsbyjs.com/plugins/gatsby-plugin-google-analytics/ for help.
+
+        Thanks! Here's what we'll now do:
+            Create a new Gatsby site in the folder gatsby-101
+            Get you set up to use styled-components for styling your site
+            Install gatsby-plugin-google-analytics, gatsby-plugin-sharp, gatsby-plugin-sitemap, gatsby-plugin-manifest
+
+        √ Shall we do this? (Y/n) · Yes
+        √ Cloning site template
+        > Installing Gatsby...
+        ```
+    - cd gatsby-101
+    - npm run develop
+
+- From Repository [Create a Gatsby site](https://www.gatsbyjs.com/docs/tutorial/part-zero/#create-a-gatsby-site/part-zero/):
+    - npm init gatsby
+        ```sh
+        $ npm install -g gatsby-cli
+        $ gatsby --help
+        $ gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
+        $ cd hello-world
+        $ gatsby develop
+        ```
+
+## Wordpress
+- [Vagrant Setup](https://www.howtoforge.com/setup-a-local-wordpress-development-environment-with-vagrant/)
 - vagrant -v        // 2.2.5
 - vagrant plugin install vagrant-hostsupdater  // On OS's hosts file
-
-            Installing the 'vagrant-hostsupdater' plugin. This can take a few minutes...
-            Fetching: vagrant-hostsupdater-1.1.1.160.gem (100%)
-            Installed the plugin 'vagrant-hostsupdater (1.1.1.160)'!
+    ```sh
+    Installing the 'vagrant-hostsupdater' plugin. This can take a few minutes...
+    Fetching: vagrant-hostsupdater-1.1.1.160.gem (100%)
+    Installed the plugin 'vagrant-hostsupdater (1.1.1.160)'!
+    ```
 - git clone -b master git://github.com/Varying-Vagrant-Vagrants/VVV.git ~/vvv
 - cd vvv            // C:\Users\EB9263\~\vvv
 - vagrant up        // Varying Vagrant Vagrants v3.1.1 C:/Users/EBXXXX/~/vvv
 - Add new site on vvv-custom.yml
 - vagrant reload --provision
 
-# Concrete5
-- (https://github.com/concrete5/composer)
+## Drupal 8 
+- which drush
+    * /home/vagrant/.composer/vendor/bin/drush
+- brew install drush    // if aren't install
+- drush dl drupal-8 --select
+    ```sh
+    Choose one of the available releases for drupal:
+    [0]  :  Cancel
+    [1]  :  8.7.x-dev    -  2018-Aug-06  -  Development
+    [2]  :  8.6.0-beta2  -  2018-Aug-03  -  Supported
+    [3]  :  8.5.6        -  2018-Aug-01  -  Security, Recommended
+    
+    Project drupal (8.5.6) downloaded to /home/vagrant/code/drupal8.test/public/drupal-8.5.6. [success]
+    Project drupal contains: [success]
+    - 2 profiles: standard, demo_umami
+    - 16 themes: classy, stark, seven, bartik, twig, stable, demo_umami_content, umami, testing_multilingual, testing_missing_dependencies, testing_multilingual_with_english, drupal_system_listing_compatible_test, testing,
+    testing_config_overrides, testing_config_import, minimal
+    - 75 modules: field, file, block, system, tracker, contextual, serialization, language, inline_form_errors, hal, layout_builder, big_pipe, responsive_image, content_translation, ban, content_moderation, help, dblog, views_ui,
+    block_place, telephone, migrate_drupal, breakpoint, datetime_range, views, statistics, path, history, node, migrate, menu_link_content, datetime, menu_ui, rdf, color, book, filter, contact, ckeditor, editor, image,
+    field_layout, workflows, comment, locale, taxonomy, search, settings_tray, entity_reference, user, shortcut, rest, basic_auth, field_ui, syslog, options, aggregator, simpletest, text, quickedit, page_cache, dynamic_page_cache,
+    toolbar, automated_cron, config_translation, media, forum, migrate_drupal_ui, update, tour, block_content, config, link, layout_discovery, action
+    ```
+
+## Concrete5
+- [Repository Concrete](https://github.com/concrete5/composer)
 - mkdir concrete5.test
 - composer create-project -n concrete5/composer concrete5.test
 - cd concrete5.test/
 - sudo ./vendor/bin/concrete5 c5:install -i
-
+```sh
 The current user is root: this is discouraged for this CLI command.
 Do you want to proceed anyway [Y/N]? Y
 Checking required preconditions:
@@ -638,27 +721,26 @@ Checking required preconditions:
 Checking optional preconditions:
 - Remote File Importing... passed.
 - Zip Support... passed.
-
-        Location of database server? [127.0.0.1]:
-        Database name?: themeconcrete5
-        Database username?: root
-        Database password?:
-        The system time zone, compatible with the database one? [UTC]:
-        Name of the site? [concrete5 Site]: Neksix Site
-        Canonical URL?: http://themeconcrete5.test/
-        Alternative canonical URL?: http://themeconcrete5.test/
-        Starting point to use? [elemental_blank]:
-        [0] elemental_blank
-        [1] elemental_full
-        > 1
-        Email of the admin user of the install? [admin@example.com]: jsiesquen@adperu.com
-        Password of the admin user of the install?:
-        Additional user username?: jsiesquen
-        Additional user email? [demo@example.com]: jsiesquen@neksix.com
-        Additional user password?:
-        The default concrete5 interface language (eg en_US)? [en_US]: es_ES
-        The default site locale (eg en_US)? [es_ES]:
-        Use configuration file for installation? [none]:
+    Location of database server? [127.0.0.1]:
+    Database name?: themeconcrete5
+    Database username?: root
+    Database password?:
+    The system time zone, compatible with the database one? [UTC]:
+    Name of the site? [concrete5 Site]: Neksix Site
+    Canonical URL?: http://themeconcrete5.test/
+    Alternative canonical URL?: http://themeconcrete5.test/
+    Starting point to use? [elemental_blank]:
+    [0] elemental_blank
+    [1] elemental_full
+    > 1
+    Email of the admin user of the install? [admin@example.com]: jsiesquen@adperu.com
+    Password of the admin user of the install?:
+    Additional user username?: jsiesquen
+    Additional user email? [demo@example.com]: jsiesquen@neksix.com
+    Additional user password?:
+    The default concrete5 interface language (eg en_US)? [en_US]: es_ES
+    The default site locale (eg en_US)? [es_ES]:
+    Use configuration file for installation? [none]:
 
 Checking required configuration preconditions:
 - Canonical URLs... passed.
@@ -668,53 +750,53 @@ Checking required configuration preconditions:
 Checking optional configuration preconditions:
 - Database time zone... passed.
 - Table case... passed (Table names are stored in the specified lettercase (lookups are performed in a case-sensitive way).).
+    +---------------------------+-----------------------------+
+    | Question                  | Value                       |
+    +---------------------------+-----------------------------+
+    | env                       |                             |
+    | db-server                 | 127.0.0.1                   |
+    | db-username               | root                        |
+    | db-password               | HIDDEN                      |
+    | db-database               | themeconcrete5              |
+    | timezone                  | UTC                         |
+    | site                      | Neksix Site                 |
+    | canonical-url             | http://themeconcrete5.test/ |
+    | canonical-url-alternative | http://themeconcrete5.test/ |
+    | starting-point            | elemental_full              |
+    | admin-email               | jsiesquen@adperu.com        |
+    | admin-password            | HIDDEN                      |
+    | demo-username             | jsiesquen                   |
+    | demo-password             | HIDDEN                      |
+    | demo-email                | jsiesquen@neksix.com        |
+    | language                  | es_ES                       |
+    | site-locale               | es_ES                       |
+    | config                    | none                        |
+    +---------------------------+-----------------------------+
+    Would you like to install 
+    with these settings? [Y]es / [N]o / [E]dit: Y
 
-        +---------------------------+-----------------------------+
-        | Question                  | Value                       |
-        +---------------------------+-----------------------------+
-        | env                       |                             |
-        | db-server                 | 127.0.0.1                   |
-        | db-username               | root                        |
-        | db-password               | HIDDEN                      |
-        | db-database               | themeconcrete5              |
-        | timezone                  | UTC                         |
-        | site                      | Neksix Site                 |
-        | canonical-url             | http://themeconcrete5.test/ |
-        | canonical-url-alternative | http://themeconcrete5.test/ |
-        | starting-point            | elemental_full              |
-        | admin-email               | jsiesquen@adperu.com        |
-        | admin-password            | HIDDEN                      |
-        | demo-username             | jsiesquen                   |
-        | demo-password             | HIDDEN                      |
-        | demo-email                | jsiesquen@neksix.com        |
-        | language                  | es_ES                       |
-        | site-locale               | es_ES                       |
-        | config                    | none                        |
-        +---------------------------+-----------------------------+
-        Would you like to install 
-        with these settings? [Y]es / [N]o / [E]dit: Y
-
-        5%: Starting installation and creating directories.
-        10%: Creating database tables.
-        12%: Creating site.
-        15%: Adding admin user.
-        20%: Installing permissions & workflow.
-        23%: Installing Custom Data Objects.
-        26%: Creating home page.
-        30%: Installing attributes.
-        35%: Adding block types.
-        39%: Adding gathering data sources.
-        40%: Page type basic setup.
-        45%: Adding themes.
-        47%: Installing automated jobs.
-        50%: Installing dashboard.
-        55%: Installing login and registration pages.
-        57%: Adding image editor functionality.
-        60%: Configuring site.
-        65%: Importing files.
-        70%: Adding pages and content.
-        85%: Adding desktops.
-        90%: Setting site permissions.
-        95%: Finishing.
-        Adding demo user... done.
-        Installation Complete!
+    5%: Starting installation and creating directories.
+    10%: Creating database tables.
+    12%: Creating site.
+    15%: Adding admin user.
+    20%: Installing permissions & workflow.
+    23%: Installing Custom Data Objects.
+    26%: Creating home page.
+    30%: Installing attributes.
+    35%: Adding block types.
+    39%: Adding gathering data sources.
+    40%: Page type basic setup.
+    45%: Adding themes.
+    47%: Installing automated jobs.
+    50%: Installing dashboard.
+    55%: Installing login and registration pages.
+    57%: Adding image editor functionality.
+    60%: Configuring site.
+    65%: Importing files.
+    70%: Adding pages and content.
+    85%: Adding desktops.
+    90%: Setting site permissions.
+    95%: Finishing.
+    Adding demo user... done.
+    Installation Complete!
+```
